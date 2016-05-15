@@ -2,8 +2,13 @@
 extends inc/layout
 
 block content
- .test one two three
+  .video
+    video(loop,muted,autoplay,poster='img/background.jpg')
+      source(src='vid/fog.mp4')
+  .outer
+    .border.top
+    .border.bottom
 
 
- script(type='text/javascript').
-   Loader.load('/jst/index.js', 'Index');
+  script(type='text/javascript').
+    Loader.load('/jst/index.js', 'Index');

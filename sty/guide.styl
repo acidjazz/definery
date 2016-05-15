@@ -1,0 +1,41 @@
+
+gf(k)
+  for key, value in data.font[k]
+    {key} unquote(value)
+
+gc(k)
+  return convert(data.color[k])
+
+.guide
+  padding 20px 0 0 0 
+
+  > .sections
+    padding 20px
+    > .section
+      width 33%
+      float left
+      > .title
+        gf(h1)
+        padding 0 0 0 10px
+        color gc(black1)
+
+      > .color
+        padding 10px 20px
+        margin 5px
+        color gc(white1)
+        for name, color in data.color
+          &.color_{name}
+            background-color: convert(color)
+            if dark(convert(color))
+              border: 1px solid white
+              color: white
+            else
+              border: 1px solid black
+              color: black
+      > .font
+        padding 10px 20px
+        overflow-x scroll
+        color gc(black1)
+        for name, font in data.font
+          &.font_{name}
+            gf(name)

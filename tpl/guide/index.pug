@@ -1,0 +1,21 @@
+
+extends ../inc/layout
+
+block content
+  .guide
+
+    .sections
+
+      .section.colors
+        .title Colors
+        each color, name in data.color
+          .color(class='color_'+name) #{name} (#{color})
+
+      .section.fonts
+        .title Fonts
+        each atts, name in data.font
+          .font(class="font_#{name}") #{name} #{atts['font-family']} #{atts['font-size']}
+
+  script(type='text/javascript').
+    Loader.load('/jst/index.js', 'Index');
+    setTimeout(function() { $('header').addClass('settled'); }, 1000);
