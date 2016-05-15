@@ -1,0 +1,26 @@
+{
+  "name": "definery",
+  "description": "the process of rapidy concepting",
+  "main": "index.html",
+  "authors": [
+    "Kevin Olson"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "256",
+    "portfolio",
+    "devshop"
+  ],
+  "homepage": "https://github.com/acidjazz/256",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.3"
+  }
+}

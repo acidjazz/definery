@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="485px" height="560px" viewBox="0 0 485 560" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>Flat</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M6.21724894e-14,0 L343.164585,198.115636 L233.160041,261.626789 L5.68434189e-14,127.012862 L6.21724894e-14,0 Z M6.57252031e-14,560 L110,496.494845 L110,227.471809 L5.68434189e-14,163.963279 L6.57252031e-14,560 Z M485,280 L142,478.020619 L142,351.272153 L375.165435,216.590354 L485,280 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Flat" fill="#55C7C0" xlink:href="#path-1"></use>
+    </g>
+</svg>
