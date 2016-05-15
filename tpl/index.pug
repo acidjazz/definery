@@ -2,12 +2,19 @@
 extends inc/layout
 
 block content
-  .video
-    video(loop,muted,autoplay,poster='img/background.jpg')
-      source(src='vid/fog.mp4')
-  .outer
-    .border.top
-    .border.bottom
+
+  .border.vert.top
+  .border.horiz.left
+  .border.vert.bottom
+  .border.horiz.right
+
+  .video#video
+    video(loop,muted,autoplay,poster="img/background.jpg")
+      source(src="vid/fog.mp4")
+
+  .blend
+    .star
+      include ../pub/svg/star.svg
 
 
   script(type='text/javascript').

@@ -100,14 +100,26 @@ limitations under the License.
   <body>
     <header></header>
     <div class="container">
-      <div class="video">
+      <div class="border vert top"></div>
+      <div class="border horiz left"></div>
+      <div class="border vert bottom"></div>
+      <div class="border horiz right"></div>
+      <div class="video" id="video">
         <video loop muted autoplay poster="img/background.jpg">
           <source src="vid/fog.mp4">
         </video>
       </div>
-      <div class="outer">
-        <div class="border top"></div>
-        <div class="border bottom"></div>
+      <div class="blend">
+        <div class="star"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 485 560" style="enable-background:new 0 0 485 560;" xml:space="preserve">
+<polygon points="0,0 343.2,198.1 233.2,261.6 0,127 "/>
+<polygon points="0,560 110,496.5 110,227.5 0,164 "/>
+<polygon points="485,280 142,478 142,351.3 375.2,216.6 "/>
+</svg>
+
+        </div>
       </div>
       <script type="text/javascript">Loader.load('/jst/index.js', 'Index');</script>
     </div>

@@ -1,25 +1,26 @@
-.outer
-  height 100vh
-  border-left 12px solid gc(teal1)
-  border-right 12px solid gc(teal1)
-  background rgba(gc(teal2), 0.75)
-  > .border
-    position absolute
+.border
+  position absolute
+  background-color gc(teal1)
+  &.vert
     height 12px
     width 100vw
+  &.horiz
+    width 12px
+    height 100vh
+  &.top
+    top 0px
+  &.bottom
+    bottom 0px
+  &.left
     left 0px
-    background-color gc(teal1)
-    &.top
-      top 0px
-    &.bottom
-      bottom 0px
+  &.right
+    right 0px
 .video
   position absolute
   top 0
   bottom 0
   width 100%
   height 100%
-  z-index -100
   > video
     min-width 100%
     min-height 100%
@@ -30,3 +31,25 @@
     left 50%
     transform translate(-50%, -50%)
 
+.blend
+  mix-blend-mode screen
+  position absolute
+  width 100vw
+  height 100vh
+  background-color rgba(gc(white1), 1)
+  text-align center
+  gf(h1)
+
+.star
+  position absolute
+  width 600px
+  height 600px
+  top 50%
+  left 50%
+  margin-top -300px
+  margin-left -300px
+  > svg
+    width inherit
+    height inherit
+    > path
+      fill transparent
