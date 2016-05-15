@@ -3,15 +3,15 @@ extends inc/layout
 
 block content
 
-  .video#video
-    video(loop,muted,autoplay,poster="img/background.jpg")
-      source(src="vid/fog.mp4")
-
-  .blend
-    .left test
-    .star
-      include ../pub/svg/star.svg
-  .green
+  .colors
+    .cyan
+  .blend-multiply
+    .video#video
+      //video(loop,muted,autoplay,poster="img/background.jpg")
+        source(src="vid/fog.mp4")
+    .blend-screen
+      .star
+        include ../pub/svg/star.svg
 
   .border.vert.top
   .border.horiz.left

@@ -15,45 +15,65 @@
     left 0px
   &.right
     right 0px
-.video
+.colors
   position absolute
   top 0
-  bottom 0
+  left 0
   width 100%
   height 100%
-  > video
-    min-width 100%
-    min-height 100%
-    width auto
-    height auto
+  > .cyan
+    background-color gc(teal2)
+    background-image url('/img/background.jpeg')
+    background-size cover
     position absolute
-    top 50%
-    left 50%
-    transform translate(-50%, -50%)
-
-.blend
-  mix-blend-mode color-dodge
-  position absolute
-  width 100vw
-  height 100vh
-  background-color gc(white1)
-  text-align center
-  gf(h1)
-  > .left
-    position absolute
-    width 50vw
-    height 50vw
-    top 25vh
+    top 0
     left 0
-  > .star
+    width 100%
+    height 100%
+
+.blend-multiply
+  mix-blend-mode multiply
+  > .video
     position absolute
-    width 50vw
-    height 50vw
-    top 50%
-    margin-top -25vw
-    right 0
-    > svg
-      width inherit
-      height inherit
-      > path
-        fill transparent
+    top 0
+    bottom 0
+    width 100%
+    height 100%
+    > video
+      min-width 100%
+      min-height 100%
+      width auto
+      height auto
+      position absolute
+      top 50%
+      left 50%
+      transform translate(-50%, -50%)
+  > .blend-screen
+    mix-blend-mode screen
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background-color rgba(gc(white1), 1)
+    text-align center
+    gf(h1)
+    > .star
+      position absolute
+      width 50vw
+      height 50vw
+      top 50%
+      margin-top -25vw
+      right 0
+      > svg
+        width inherit
+        height inherit
+        > path
+          fill transparent
+.green
+  background-color rgb(255, 204, 184)
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%

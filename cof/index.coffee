@@ -12,7 +12,7 @@ Index =
   i: ->
 
     console.log 'Index.i()'
-    #Index.ytApi()
+    Index.ytApi()
 
   ytApi: ->
     tag = document.createElement 'script'
