@@ -3,19 +3,20 @@ extends inc/layout
 
 block content
 
-  .border.vert.top
-  .border.horiz.left
-  .border.vert.bottom
-  .border.horiz.right
-
   .video#video
     video(loop,muted,autoplay,poster="img/background.jpg")
       source(src="vid/fog.mp4")
 
   .blend
+    .left test
     .star
       include ../pub/svg/star.svg
+  .green
 
+  .border.vert.top
+  .border.horiz.left
+  .border.vert.bottom
+  .border.horiz.right
 
   script(type='text/javascript').
     Loader.load('/jst/index.js', 'Index');

@@ -44,6 +44,7 @@ Index =
         rel: 0
         disablekb: 1
         loop: 1
+        html5: 1
         controls: 0
         theme: 'light'
         wmode: 'opaque'

@@ -32,24 +32,28 @@
     transform translate(-50%, -50%)
 
 .blend
-  mix-blend-mode screen
+  mix-blend-mode color-dodge
   position absolute
   width 100vw
   height 100vh
-  background-color rgba(gc(white1), 0.8)
+  background-color gc(white1)
   text-align center
   gf(h1)
-
-.star
-  position absolute
-  width 600px
-  height 600px
-  top 50%
-  left 50%
-  margin-top -300px
-  margin-left -300px
-  > svg
-    width inherit
-    height inherit
-    > path
-      fill transparent
+  > .left
+    position absolute
+    width 50vw
+    height 50vw
+    top 25vh
+    left 0
+  > .star
+    position absolute
+    width 50vw
+    height 50vw
+    top 50%
+    margin-top -25vw
+    right 0
+    > svg
+      width inherit
+      height inherit
+      > path
+        fill transparent
