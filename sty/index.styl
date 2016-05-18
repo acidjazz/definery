@@ -69,11 +69,12 @@
     gf(h1)
 .star
   position absolute
-  width 40vw
-  height 40vw
+  width 500px
+  height 500px
   top 50%
-  margin-top -20vw
-  right 5vw
+  left 50%
+  margin-top -250px
+  margin-left 50px
   > svg
     width inherit
     height inherit
@@ -90,7 +91,7 @@
         animation-delay 1.5s
 .content
   position absolute
-  width 380px
+  width 300px
   height 400px
   top 50%
   left 50%
@@ -143,3 +144,12 @@
     opacity 0
   to
     opacity 1
+
+@media all and (min-width: 1px) and (max-width: 1000px)
+  .star
+    display none
+  .content
+    width 250px
+    height 400px
+    margin-left -125px
+    margin-top -200px
