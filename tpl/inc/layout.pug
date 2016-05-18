@@ -71,7 +71,21 @@ html(lang='en')
         "@context": "http://schema.org",
         "@type": "Organization",
         "url": "#{data.meta.url}",
-        "logo": "#{data.meta.url}#{data.meta.logo}",
+        "logo": "#{data.meta.url}#{data.meta.share}",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "28 2nd Street, 3rd floor #3190",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "postalCode": "94105",
+          "addressCountry": "US"
+        },
+        "sameAs": {
+          "https://www.facebook.com/definery.io/",
+          "https://www.twitter.com/definery_io/",
+          "https://www.instagram.com/definery.io/"
+        }
+ 
       }
 
     //- facebook
