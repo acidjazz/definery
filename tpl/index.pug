@@ -9,8 +9,8 @@ block content
       include ../pub/svg/star.svg
   .blend-multiply
     .video#video
-      video(loop,muted,autoplay,poster="img/background.jpg")
-        source(src="vid/fog.mp4")
+      video(loop,muted,autoplay,poster="/img/poster.jpg")
+        source(src="/vid/fog.mp4")
     .blend-screen
       .star
         include ../pub/svg/star.svg
@@ -19,6 +19,10 @@ block content
   .border.horiz.left
   .border.vert.bottom
   .border.horiz.right
+
+  .content
+    .logo
+      include ../pub/svg/logo.svg
 
   script(type='text/javascript').
     Loader.load('/jst/index.js', 'Index');
