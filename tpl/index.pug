@@ -21,8 +21,16 @@ block content
   .border.horiz.right
 
   .content
-    .logo
-      include ../pub/svg/logo.svg
+    .inner
+      .logo
+        include ../pub/svg/logo.svg
+      .pronounce /dəˈfīn(ə)rē/
+      .define 1. the process of rapidly concepting, iterating, and prototyping digital products and services
+      .define.second 2. an establishment that transforms big ideas into amazing products for real people
+      .bottom
+        .line
+        a.email(href='mailto:hello@definery.io') hello@definery.io
 
   script(type='text/javascript').
     Loader.load('/jst/index.js', 'Index');
+
