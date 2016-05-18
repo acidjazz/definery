@@ -130,13 +130,16 @@
         height 4px
         background-color gc(white1)
       > .email
-        display block
         margin 20px 0 0 0
-        color gc(teal1)
         text-decoration none
-        &:hover
-          background-color gc(teal1)
-          color gc(teal2)
+        > input
+          gf(copy1)
+          border none
+          background-color transparent
+          color gc(teal1)
+          outline none
+          *:active
+            outline none
 
 
 @keyframes fadeIn

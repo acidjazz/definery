@@ -13,6 +13,18 @@ Index =
 
     console.log 'Index.i()'
     #Index.ytApi()
+    Index.handlers()
+
+  handlers: ->
+    $('.email input').focus Index.email
+
+
+  email: ->
+
+    i = $('.email > input')
+
+    i[0].setSelectionRange(0, i[0].value.length)
+
 
   ytApi: ->
     tag = document.createElement 'script'
