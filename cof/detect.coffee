@@ -2,12 +2,31 @@ Detect =
 
   timeout: 1000
   paused: false
+  xDown: null
+  yDown: null
 
   i: ->
 
     console.log 'Detect.i()'
 
   handler: (callback) ->
+
+    $(document).bind 'touchstart', (e) ->
+      return true if Detect.paused
+      Detect.xDown = e.originalEvent.touches[0].clientX
+      Detect.yDown = e.originalEvent.touches[0].clientY
+
+    $(document).bind 'touchmove', (e) ->
+      return true if Detect.paused
+
+      xUp = e.originalEvent.touches[0].clientX
+      yUp = e.originalEvent.touches[0].clientY
+
+      xDiff = Detect.xDown - xUp
+      yDiff = Detect.yDown - yUp
+
+      if yDiff > 0 then callback 'down' else callback 'up'
+      Detect.pause()
 
     $(document).bind 'mousewheel', (e) ->
 
