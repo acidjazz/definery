@@ -2,36 +2,84 @@
 extends inc/layout
 
 block content
+  include ../pub/svg/star.svg
+  include ../pub/svg/product.svg
 
   .colors
     .cyan
-    .star
-      include ../pub/svg/star.svg
+      .background.definery.on
+      .background.iterate.off
+      .background.navigate.off
+      .background.product.off
+    .svg.star.definery
+      include ../pub/svg/all.svg
   .blend-multiply
     .video#video
       video(loop,muted,autoplay,poster="/img/poster.jpg")
         source(src="/vid/fog.mp4")
     .blend-screen
-      .star
-        include ../pub/svg/star.svg
+      .svg.star
+        include ../pub/svg/all.svg
 
   .border.vert.top
   .border.horiz.left
   .border.vert.bottom
   .border.horiz.right
 
-  .content
+  .content.definery.on
     .inner
       .logo
         include ../pub/svg/logo.svg
       .pronounce /dəˈfīn(ə)rē/
       .define 1.  a digital product design and innovation company that transforms great ideas into amazing products that people want.
-      //.define.second 2. an establishment that transforms big ideas into amazing products for real people
       .bottom
         .line
         .email
           input(type='text',value='hello@definery.io')
 
+  .content.iterate.off
+    .inner
+      .title Accelerate, Iterate, Advance
+      .copy Pellentesque at vulputate leo. Nulla lobortis nibh id libero luctus, eget vestibulum massa cursus. In purus erat, lacinia 
+      .bottom
+        .line
+        .email
+          input(type='text',value='hello@definery.io')
+
+  .content.navigate.off
+    .inner
+      .title Great idaes come from everywhere.
+      .copy Pellentesque at vulputate leo. Nulla lobortis nibh id libero luctus, eget vestibulum massa cursus. In purus erat, lacinia 
+      .bottom
+        .line
+        .email
+          input(type='text',value='hello@definery.io')
+
+  .content.navigate.off
+    .inner
+      .title Great idaes come from everywhere.
+      .copy Pellentesque at vulputate leo. Nulla lobortis nibh id libero luctus, eget vestibulum massa cursus. In purus erat, lacinia 
+      .bottom
+        .line
+        .email
+          input(type='text',value='hello@definery.io')
+
+  .content.product.off
+    .inner
+      .title Winning proucts aren't just beautiful, they're easy to use.
+      .copy Pellentesque at vulputate leo. Nulla lobortis nibh id libero luctus, eget vestibulum massa cursus. In purus erat, lacinia 
+      .bottom
+        .line
+        .email
+          input(type='text',value='hello@definery.io')
+
+
+
+
+
+
+
   script(type='text/javascript').
+    Loader.load('/jst/detect.js', 'Detect');
     Loader.load('/jst/index.js', 'Index');
 

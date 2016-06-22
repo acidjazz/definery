@@ -1,78 +1,46 @@
 Index =
-  player: false
 
-  states:
-    '-1': 'unstarted',
-    0: 'ended',
-    1: 'playing',
-    2: 'paused',
-    3: 'buffering',
-    5: 'video cued'
+  nav: ['definery','iterate', 'navigate', 'product']
+  current: 0
 
   i: ->
 
-    console.log 'Index.i()'
-    #Index.ytApi()
     Index.handlers()
 
   handlers: ->
-    $('.email input').focus Index.email
 
+    Detect.handler Index.navigate
 
-  email: ->
+  navigate: (direction) ->
 
-    i = $('.email > input')
+    console.log 'Index.navigate() direction: ' + direction
 
-    i[0].setSelectionRange(0, i[0].value.length)
+    if direction is 'down'
+      if (Index.current == (Index.nav.length-1))
+        Index.current = 0
+      else
+        Index.current++
 
+    if direction is 'up'
+      if (Index.current == 0)
+        Index.current = Index.nav.length-1
+      else
+        Index.current--
 
-  ytApi: ->
-    tag = document.createElement 'script'
-    tag.src = 'https://www.youtube.com/iframe_api'
-    tag.type = 'text/javascript'
-    tag.async = true
-    first = document.getElementsByTagName('script')[0]
-    first.parentNode.insertBefore tag, first
+    current = Index.nav[Index.current]
 
-  ready: (event) ->
-    console.log 'youtube is ready'
+    for sect in Index.nav
+      if sect isnt current
+        $('.colors .svg').removeClass sect
 
-    width = '100%'
-    height = '100%'
+    _.off $(".background.on")
+    _.on ".background.#{current}"
 
-    Index.player = new YT.Player('video',
-      width: width
-      height: height
-      videoId: 'ZNxIDWFVNVc'
-      events:
-        onReady: Index.playerReady
-        onStateChange: Index.stateChange
-      playerVars:
-        allowfullscreen: 1
-        modestbranding: 1
-        enablejsapi: 1
-        origin: Index.origin
-        version: 3
-        rel: 0
-        disablekb: 1
-        loop: 1
-        html5: 1
-        controls: 0
-        theme: 'light'
-        wmode: 'opaque'
-    )
+    _.off $(".content")
+    _.on ".content.#{current}"
 
-  playerReady: (event) ->
-    setTimeout ->
-      Index.player.playVideo()
-      #Index.player.mute()
-    , 100
-  stateChange: (event) ->
-    Index.cstate = Index.states[event.data]
-    #_.t 'Details', watch.cstate, watch.title
+    $('.colors .svg').addClass current
 
-
-
-onYouTubeIframeAPIReady = (event) ->
-  Index.ready(event)
+    $(".to_#{current}").each (i, el) ->
+      el.beginElement()
 
