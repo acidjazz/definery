@@ -70,6 +70,7 @@ block content
 
 
   script(type='text/javascript').
-    Loader.load('/jst/detect.js', 'Detect');
-    Loader.load('/jst/index.js', 'Index');
+    Loader.load('/jst/detect.js', 'Detect', function() {
+      Loader.load('/jst/index.js', 'Index');
+    });
 
