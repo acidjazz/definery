@@ -11,6 +11,18 @@ Index =
 
     Detect.handler Index.navigate
 
+    $('.nav').on 'click', Index.navHandler
+
+  navHandler: ->
+    t = $(this)
+
+    previous = t.data 'from'
+    current = t.data 'to'
+    direction = t.data 'dir'
+
+    Index.transit(previous, current, direction)
+    
+
   navigate: (direction) ->
 
     console.log 'Index.navigate() direction: ' + direction
