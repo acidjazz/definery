@@ -70,7 +70,7 @@
       &.outToBottom
         animation outToBottom 1s ease-in both
   > .svg > svg > polygon
-    transition fill 1s ease-in 0.1s 
+    transition fill 1s ease-in 0.1s
   > .svg.definery > svg > polygon
     fill gc(teal1)
   > .svg.iterate > svg > polygon
@@ -147,7 +147,7 @@
   &.cOutToTop
     animation cOutToTop 0.6s ease-in both
   &.cOutToBottom
-    animation cOutToBottom 0.6s ease-in both 
+    animation cOutToBottom 0.6s ease-in both
 
   > .inner
     position relative
@@ -190,7 +190,11 @@
       cursor pointer
       gf(copy1b)
       user-select none
+      touch-callout none
+      -webkit-touch-callout none
       transition transform 0.5s ease-in
+      -webkit-tap-highlight-color rgba(255, 255, 255, 0)
+      tap-highlight-color rgba(255, 255, 255, 0)
       &:hover
         transform translate(10px, 0)
         transition transform 2s ease-out
@@ -286,7 +290,7 @@
     transform translate(0, 0)
   to
     opacity 0
-    transform translate(0, 350px) 
+    transform translate(0, 350px)
 
 
 
@@ -302,7 +306,30 @@
     height 400px
     margin-left -125px
     margin-top -200px
-  .background
-    animation none !important
-    animation-delay 0.5s
 
+  @keyframes inFromTop
+    from
+      opacity 0
+    to
+      opacity 1
+
+
+  @keyframes inFromBottom
+    from
+      opacity 0
+    to
+      opacity 1
+
+
+  @keyframes outToTop
+    from
+      opacity 1
+    to
+      opacity 0
+
+
+  @keyframes outToBottom
+    from
+      opacity 1
+    to
+      opacity 0
