@@ -17,13 +17,13 @@ Index =
 
     previous = Index.nav[Index.current]
 
-    if direction is 'down'
+    if direction is 'down' or direction is 'right'
       if (Index.current == (Index.nav.length-1))
         Index.current = 0
       else
         Index.current++
 
-    if direction is 'up'
+    if direction is 'up' or direction is 'left'
       if (Index.current == 0)
         Index.current = Index.nav.length-1
       else
@@ -43,7 +43,7 @@ Index =
     _.on ".content.#{current}"
 
     console.log direction
-    if direction is 'down'
+    if direction is 'down' or direction is 'right'
 
       _.on ".background.#{current}"
       $(".background.#{current}").addClass 'inFromBottom'
@@ -57,7 +57,7 @@ Index =
 
       , 1000
 
-    if direction is 'up'
+    if direction is 'up' or direction is 'left'
 
       $(".background.#{current}").addClass 'inFromTop'
       _.on ".background.#{current}"
