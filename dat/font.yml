@@ -4,6 +4,11 @@ copy1:
   font-size: 15px
   line-height: 22px
   font-weight: '300'
+copy1b:
+  font-family: Work Sans
+  font-size: 15px
+  line-height: 22px
+  font-weight: '700'
 
 h1:
   font-family: Work Sans

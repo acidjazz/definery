@@ -5,8 +5,10 @@ white1: "#ffffff"
 teal1: "#55c7c0"
 teal2: "#223844"
 teal3: "#9ffff9"
-blue1: "#0F6B81"
-pink1: "#D13E68"
+
+blue1: "#034c5e"
+green1: "#0b6c66"
+pink1: "#cd275c"
 
 bpink: "#790D2F"
 bblue: "#034C5E"

@@ -31,6 +31,10 @@ Index =
 
     current = Index.nav[Index.current]
 
+    Index.transit(previous, current, direction)
+
+  transit: (previous, current, direction) ->
+
     for sect in Index.nav
       if sect isnt current
         $('.colors .svg').removeClass sect
@@ -46,12 +50,12 @@ Index =
 
       _.on ".background.#{current}"
       $(".background.#{current}").addClass 'inFromBottom'
-      #$(".background.#{previous}").addClass 'outToTop'
+      $(".background.#{previous}").addClass 'outToTop'
       setTimeout ->
 
         $(".background.#{current}").removeClass 'inFromBottom'
 
-        #$(".background.#{previous}").removeClass 'outToTop'
+        $(".background.#{previous}").removeClass 'outToTop'
         _.off ".background.#{previous}"
 
       , 1000
@@ -60,14 +64,12 @@ Index =
 
       $(".background.#{current}").addClass 'inFromTop'
       _.on ".background.#{current}"
-      #$(".background.#{previous}").addClass 'outToBottom'
+      $(".background.#{previous}").addClass 'outToBottom'
       setTimeout ->
-        #$(".background.#{previous}").removeClass 'outToBottom'
+        $(".background.#{previous}").removeClass 'outToBottom'
         $(".background.#{current}").removeClass 'inFromTop'
         _.off ".background.#{previous}"
       , 1000
-
-
 
     $(".to_#{current}").each (i, el) ->
       el.beginElement()

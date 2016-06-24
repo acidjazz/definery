@@ -7,11 +7,10 @@ block content
 
   .colors
     .cyan
-      .backgrounds
-        .background.definery.on
-        .background.iterate.off
-        .background.navigate.off
-        .background.product.off
+      .background.definery.on
+      .background.iterate.off
+      .background.navigate.off
+      .background.product.off
     .svg.star.definery
       include ../pub/svg/all.svg
   .blend-multiply
@@ -29,42 +28,45 @@ block content
 
   .content.definery.on
     .inner
+      .top
+        .nav.nav_definery.nav_to_product to product copy
       .logo
         include ../pub/svg/logo.svg
       .pronounce /dəˈfīn(ə)rē/
       .define 1.  a digital product design and innovation company that transforms great ideas into amazing products that people want.
       .bottom
         .line
-        .email
-          input(type='text',value='hello@definery.io')
+        .nav.nav_definery.nav_to_iterate to iterate copy
 
   .content.iterate.off
     .inner
+      .top
+        .nav.nav_iterate.nav_to_definery to definery copy
       .title Accelerate, Iterate, Advance
       .copy Pellentesque at vulputate leo. Nulla lobortis nibh id libero luctus, eget vestibulum massa cursus. In purus erat, lacinia
       .bottom
         .line
+        .nav.nav_iterate.nav_to_navigate to navigate copy
 
   .content.navigate.off
     .inner
+      .top
+        .nav.nav_navigate.nav_to_iterate to iterate copy
       .title Great idaes come from everywhere.
       .copy Pellentesque at vulputate leo. Nulla lobortis nibh id libero luctus, eget vestibulum massa cursus. In purus erat, lacinia
       .bottom
         .line
-
-  .content.navigate.off
-    .inner
-      .title Great idaes come from everywhere.
-      .copy Pellentesque at vulputate leo. Nulla lobortis nibh id libero luctus, eget vestibulum massa cursus. In purus erat, lacinia
-      .bottom
-        .line
+        .nav.nav_navigate.nav_to_product to product copy
 
   .content.product.off
     .inner
+      .top
+        .nav.nav_product.nav_to_navigate to navigate copy
       .title Winning proucts aren't just beautiful, they're easy to use.
       .copy Pellentesque at vulputate leo. Nulla lobortis nibh id libero luctus, eget vestibulum massa cursus. In purus erat, lacinia
       .bottom
         .line
+        .nav.nav_product.nav_to_definery to definery copy
 
 
 
