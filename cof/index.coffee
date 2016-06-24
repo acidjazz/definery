@@ -43,32 +43,48 @@ Index =
     $('.colors .svg').addClass current
     $('.border').addClass current
 
-    _.off $(".content")
-    _.on ".content.#{current}"
-
     if direction is 'down' or direction is 'right'
 
       _.on ".background.#{current}"
       $(".background.#{current}").addClass 'inFromBottom'
       $(".background.#{previous}").addClass 'outToTop'
+
+      _.on ".content.#{current}"
+      $(".content.#{current}").addClass 'cInFromBottom'
+      $(".content.#{previous}").addClass 'cOutToTop'
+
       setTimeout ->
 
         $(".background.#{current}").removeClass 'inFromBottom'
-
         $(".background.#{previous}").removeClass 'outToTop'
         _.off ".background.#{previous}"
+
+        $(".content.#{current}").removeClass 'cInFromBottom'
+        $(".content.#{previous}").removeClass 'cOutToTop'
+        _.off ".content.#{previous}"
 
       , 1000
 
     if direction is 'up' or direction is 'left'
 
-      $(".background.#{current}").addClass 'inFromTop'
       _.on ".background.#{current}"
+      $(".background.#{current}").addClass 'inFromTop'
       $(".background.#{previous}").addClass 'outToBottom'
+
+      _.on ".content.#{current}"
+      $(".content.#{current}").addClass 'cInFromTop'
+      $(".content.#{previous}").addClass 'cOutToBottom'
+
       setTimeout ->
+
         $(".background.#{previous}").removeClass 'outToBottom'
         $(".background.#{current}").removeClass 'inFromTop'
         _.off ".background.#{previous}"
+
+        $(".content.#{previous}").removeClass 'cOutToBottom'
+        $(".content.#{current}").removeClass 'cInFromTop'
+        _.off ".content.#{previous}"
+
       , 1000
 
     $(".to_#{current}").each (i, el) ->

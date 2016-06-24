@@ -139,16 +139,14 @@
   margin-left -400px
   z-index 100
   onoff()
-  &.inFromBottom
-    animation cInFromBottom 1s ease-out both
-    z-index 10
-  &.inFromTop
-    z-index 10
-    animation cInFromTop 1s ease-out both
-  &.outToTop
-    animation cOutToTop 1s ease-in both
-  &.outToBottom
-    animation cOutToBottom 1s ease-in both
+  &.cInFromBottom
+    animation cInFromBottom 0.75s ease-in both 0.15s
+  &.cInFromTop
+    animation cInFromTop 0.75s ease-in both 0.15s
+  &.cOutToTop
+    animation cOutToTop 0.75s ease-in both
+  &.cOutToBottom
+    animation cOutToBottom 0.75s ease-in both 
 
   > .inner
     position relative
@@ -246,7 +244,7 @@
 @keyframes cInFromTop
   from
     opacity 0
-    transform translate(0, -500px)
+    transform translate(0, -350px)
   to
     opacity 1
     transform translate(0, 0)
@@ -255,7 +253,7 @@
 @keyframes cInFromBottom
   from
     opacity 0
-    transform translate(0, 500px)
+    transform translate(0, 350px)
   to
     opacity 1
     transform translate(0, 0)
@@ -267,7 +265,7 @@
     transform translate(0, 0)
   to
     opacity 0
-    transform translate(0, -500px)
+    transform translate(0, -350px)
 
 
 @keyframes cOutToBottom
@@ -276,7 +274,7 @@
     transform translate(0, 0)
   to
     opacity 0
-    transform translate(0, 500px) 
+    transform translate(0, 350px) 
 
 
 
