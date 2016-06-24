@@ -1,6 +1,13 @@
 Index =
 
   nav: ['definery','iterate', 'navigate', 'product']
+
+  colors:
+    'definery': data.color.teal1
+    'iterate': data.color.blue1
+    'navigate': data.color.green1
+    'product': data.color.pink1
+
   current: 0
 
   i: ->
@@ -21,7 +28,6 @@ Index =
     direction = t.data 'dir'
 
     Index.transit(previous, current, direction)
-    
 
   navigate: (direction) ->
 
@@ -46,6 +52,12 @@ Index =
     Index.transit(previous, current, direction)
 
   transit: (previous, current, direction) ->
+
+    # i will chestbump my monitor if this works
+    setTimeout ->
+      $('meta[name=theme-color]').remove()
+      $('head').append('<meta name="theme-color" content="' + Index.colors[current] + '">')
+    , 500
 
     for sect in Index.nav
       if sect isnt current
