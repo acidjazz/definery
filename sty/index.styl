@@ -140,13 +140,13 @@
   z-index 100
   onoff()
   &.cInFromBottom
-    animation cInFromBottom 0.75s ease-in both 0.15s
+    animation cInFromBottom 0.6s ease-in both 0.15s
   &.cInFromTop
-    animation cInFromTop 0.75s ease-in both 0.15s
+    animation cInFromTop 0.6s ease-in both 0.15s
   &.cOutToTop
-    animation cOutToTop 0.75s ease-in both
+    animation cOutToTop 0.6s ease-in both
   &.cOutToBottom
-    animation cOutToBottom 0.75s ease-in both 
+    animation cOutToBottom 0.6s ease-in both 
 
   > .inner
     position relative
@@ -281,8 +281,10 @@
 @media all and (min-width: 1px) and (max-width: 1000px)
   .svg
     margin-left -250px
+    opacity 0.2
   .video
     margin-left -250px
+    display none
   .content
     width 250px
     height 300px
