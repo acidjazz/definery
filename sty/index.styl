@@ -1,7 +1,16 @@
 
 .border
   position absolute
-  background-color gc(teal1)
+  transition background-color 1s linear
+  &.definery
+    background-color gc(teal1)
+  &.iterate
+    background-color gc(bblue)
+  &.product
+    background-color gc(bpink)
+  &.navigate
+    background-color gc(bgreen)
+  z-index 100
   &.vert
     height 12px
     width 100vw
@@ -30,26 +39,42 @@
     left 0
     width 100%
     height 100%
-    background-color gc(black1)
-    > .background
+    background-color gc(teal1)
+    > .backgrounds
       position absolute
       width 100%
       height 100%
-      background-size cover
-      &.off
-        opacity 0
-        transition opacity 1s ease-in
-      &.on
-        opacity 1
-        transition opacity 1s ease-in
-      &.definery
-        background-image url('/img/bg_definery.jpg')
-      &.iterate
-        background-image url('/img/bg_iterate.jpg')
-      &.navigate
-        background-image url('/img/bg_navigate.jpg')
-      &.product
-        background-image url('/img/bg_product.jpg')
+      > .background
+        position absolute
+        width 100%
+        height 100%
+        background-size cover
+        z-index 0
+        &.off
+          display none
+        &.on
+          display block
+        &.definery
+          background-image url('/img/bg_definery.jpg')
+        &.iterate
+          background-image url('/img/bg_iterate.jpg')
+        &.navigate
+          background-image url('/img/bg_navigate.jpg')
+        &.product
+          background-image url('/img/bg_product.jpg')
+
+        &.inFromBottom
+          animation inFromBottom 1s ease-out both
+          z-index 10
+        &.inFromTop
+          z-index 10
+          animation inFromTop 1s ease-out both
+        &.outToTop
+          animation outToTop 1s ease-out both
+          animation-delay 0.5s
+        &.outToBottom
+          animation outToBottom 1s ease-out both
+          animation-delay 0.5s
   > .svg > svg > polygon
     transition fill 1s ease-in
   > .svg.definery > svg > polygon
@@ -88,6 +113,7 @@
     gf(h1)
 
 .svg
+  z-index 100
   position absolute
   width 500px
   height 500px
@@ -117,6 +143,7 @@
   left 50%
   margin-top -150px
   margin-left -400px
+  z-index 100
   > .inner
     position relative
     width 100%
@@ -174,6 +201,42 @@
     opacity 0
   to
     opacity 1
+
+@keyframes inFromTop
+  from
+    opacity 0
+    transform translate(0, -100px) scale(1.2)
+  to
+    opacity 1
+    transform translate(0, 0) scale(1)
+
+
+@keyframes inFromBottom
+  from
+    opacity 0
+    transform translate(0, 100px) scale(1.2)
+  to
+    opacity 1
+    transform translate(0, 0) scale(1)
+
+
+@keyframes outToTop
+  from
+    opacity 1
+    transform translate(0, 0)
+  to
+    opacity 0
+    transform translate(0, -100px)
+
+
+@keyframes outToBottom
+  from
+    opacity 1
+    transform translate(0, 0)
+  to
+    opacity 0
+    transform translate(0, 100px)
+
 
 @media all and (min-width: 1px) and (max-width: 1000px)
   .svg
