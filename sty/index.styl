@@ -39,7 +39,7 @@
     left 0
     width 100%
     height 100%
-    background-color black
+    background-color gc(black1)
     > .background
       position absolute
       width 100%
@@ -71,6 +71,7 @@
         animation outToBottom 1s ease-in both
   > .svg > svg > polygon
     transition fill 1s ease-in 0.1s
+    transition-timing-function: cubic-bezier(.87,-.41,.19,1.44)
   > .svg.definery > svg > polygon
     fill gc(teal1)
   > .svg.iterate > svg > polygon

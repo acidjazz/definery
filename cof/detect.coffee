@@ -25,8 +25,6 @@ Detect =
       xDiff = Detect.xDown - xUp
       yDiff = Detect.yDown - yUp
 
-      console.log xDiff, yDiff
-      
       if Math.abs(xDiff) > 25
         if xDiff > 0 then callback 'right' else callback 'left'
         Detect.pause()
