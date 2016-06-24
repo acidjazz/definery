@@ -1,6 +1,8 @@
 Index =
 
   nav: ['definery','iterate', 'navigate', 'product']
+  timeout: 1000
+  paused: false
 
   colors:
     'definery': data.color.teal1
@@ -21,6 +23,8 @@ Index =
     $('.nav').on 'click', Index.navHandler
 
   navHandler: ->
+
+    return true if Index.paused
     t = $(this)
 
     previous = t.data 'from'
@@ -28,6 +32,11 @@ Index =
     direction = t.data 'dir'
 
     Index.transit(previous, current, direction)
+
+    Index.paused = true
+    setTimeout ->
+      Index.paused = false
+    , 1000
 
   navigate: (direction) ->
 
@@ -113,4 +122,5 @@ Index =
 
     $(".to_#{current}").each (i, el) ->
       el.beginElement()
+      console.log  "#{current}.beginElement()"
 
