@@ -42,7 +42,6 @@ Index =
     _.off $(".content")
     _.on ".content.#{current}"
 
-    console.log direction
     if direction is 'down' or direction is 'right'
 
       _.on ".background.#{current}"

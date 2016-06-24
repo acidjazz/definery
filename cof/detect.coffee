@@ -25,9 +25,12 @@ Detect =
       xDiff = Detect.xDown - xUp
       yDiff = Detect.yDown - yUp
 
-      if yDiff > 0 then callback 'down' else callback 'up'
-      if xDiff > 0 then callback 'right' else callback 'left'
+      if xDiff > 50 then callback 'left' else callback 'right'
       Detect.pause()
+      return true
+      if yDiff > 50 then callback 'down' else callback 'up'
+      Detect.pause()
+      return true
 
     $(document).bind 'mousewheel', (e) ->
 
