@@ -90,11 +90,14 @@ Index =
 
         $(".background.#{current}").removeClass 'inFromBottom'
         $(".background.#{previous}").removeClass 'outToTop'
-        _.off ".background.#{previous}"
 
         $(".content.#{current}").removeClass 'cInFromBottom'
         $(".content.#{previous}").removeClass 'cOutToTop'
-        _.off ".content.#{previous}"
+
+        for sect in Index.nav
+          if sect isnt current
+            _.off ".background.#{sect}"
+            _.off ".content.#{sect}"
 
       , 1000
 
@@ -112,11 +115,14 @@ Index =
 
         $(".background.#{previous}").removeClass 'outToBottom'
         $(".background.#{current}").removeClass 'inFromTop'
-        _.off ".background.#{previous}"
 
         $(".content.#{previous}").removeClass 'cOutToBottom'
         $(".content.#{current}").removeClass 'cInFromTop'
-        _.off ".content.#{previous}"
+
+        for sect in Index.nav
+          if sect isnt current
+            _.off ".background.#{sect}"
+            _.off ".content.#{sect}"
 
       , 1000
 
