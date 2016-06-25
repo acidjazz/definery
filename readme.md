@@ -1,3 +1,3 @@
 
 ![](pub/img/share.jpg)
-> *Note*: currenty in early development
+> *Note*: currently in early development
