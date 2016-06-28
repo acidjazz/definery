@@ -27,6 +27,34 @@
   &.right
     top 0px
     right 0px
+
+.dots
+  z-index 200
+  position absolute
+  width 20px
+  height 150px
+  top 50%
+  right 30px
+  margin-top -75px
+  > .dot
+    cursor pointer
+    width 20px
+    height 20px
+    margin 15px 0
+    overflow hidden
+    > .inner
+      border-radius 50%
+      transition all 0.25s ease-in-out 
+    &.off > .inner
+      width 1px
+      height 1px
+      transform translate(5px, 5px)
+      border 5px solid gc(white1)
+    &.on > .inner
+      width 16px
+      height 16px
+      border 2px solid gc(white1)
+      transform translate(0px, 0px)
 .colors
   position absolute
   top 0

@@ -21,6 +21,7 @@ Index =
     Detect.handler Index.navigate
 
     $('.nav').on 'click', Index.navHandler
+    $('.dots > .dot').on 'click', Index.dotHandler
 
   navHandler: ->
 
@@ -37,6 +38,18 @@ Index =
     setTimeout ->
       Index.paused = false
     , 1000
+
+
+  dotHandler: ->
+
+    previous = $('.dots .dot.on').data 'sect'
+    pnum = $('.dots .dot.on').data  'num'
+    current = $(this).data 'sect'
+    cnum = $(this).data 'num'
+
+    if cnum > pnum then direction = 'down' else direction = 'up'
+
+    Index.transit previous, current, direction
 
   navigate: (direction) ->
 
@@ -125,6 +138,9 @@ Index =
             _.off ".content.#{sect}"
 
       , 1000
+
+    _.off '.dots > .dot'
+    _.on ".dots > .dot.dot_#{current}"
 
     $(".to_#{current}").each (i, el) ->
       el.beginElement()
