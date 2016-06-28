@@ -42,6 +42,8 @@ Index =
 
   dotHandler: ->
 
+    return true if Index.paused
+
     previous = $('.dots .dot.on').data 'sect'
     pnum = $('.dots .dot.on').data  'num'
     current = $(this).data 'sect'
@@ -50,6 +52,14 @@ Index =
     if cnum > pnum then direction = 'down' else direction = 'up'
 
     Index.transit previous, current, direction
+
+
+    Index.paused = true
+    setTimeout ->
+      Index.paused = false
+    , 1000
+
+
 
   navigate: (direction) ->
 
