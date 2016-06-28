@@ -1,9 +1,11 @@
 ---
+
 copy1:
   font-family: Work Sans
   font-size: 15px
   line-height: 22px
   font-weight: '300'
+
 copy1b:
   font-family: Work Sans
   font-size: 15px
@@ -14,4 +16,10 @@ h1:
   font-family: Work Sans
   font-size: 26px
   font-weight: '500'
+  line-height: 32px
+
+h2:
+  font-family: Work Sans
+  font-size: 36px
+  font-weight: '300'
   line-height: 32px

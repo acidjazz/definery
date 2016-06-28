@@ -22,6 +22,7 @@ Index =
 
     $('.nav').on 'click', Index.navHandler
     $('.dots > .dot').on 'click', Index.dotHandler
+    $('.menu > .option').on 'click', Index.menuHandler
 
   navHandler: ->
 
@@ -53,13 +54,10 @@ Index =
 
     Index.transit previous, current, direction
 
-
     Index.paused = true
     setTimeout ->
       Index.paused = false
     , 1000
-
-
 
   navigate: (direction) ->
 

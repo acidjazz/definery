@@ -28,6 +28,59 @@
     top 0px
     right 0px
 
+.menu
+  position absolute
+  top 30px
+  right 60px
+  z-index 210
+  > .option
+    cursor pointer
+    color gc(white1)
+    padding 5px
+    transition border 0.25s linear
+    &.on
+      border-bottom 2px solid gc(white1)
+    &:hover
+      border-bottom 1px solid gc(white1)
+
+.contact
+  position absolute
+  background-color gc(teal2)
+  top 0
+  bottom 0
+  left 0
+  right 0
+  z-index 205
+  onoff()
+  > .inner
+    width 310px
+    height 170px
+    position absolute
+    top 50%
+    left 50%
+    margin-left -155px
+    margin-top -85px
+    > .email
+      gf(h2)
+      color gc(teal1)
+    > .socials
+      > .social
+        width 40px
+        height 40px
+        background-color gc(teal1)
+        padding 20px
+        display inline-block
+        border-radius 50%
+        margin 50px 10px 0 10px
+        cursor pointer
+        transition background-color 0.2s linear
+        &:hover
+          background-color gc(teal3)
+        > svg
+          width inherit
+          height inherit
+          path
+            fill gc(teal2)
 .dots
   z-index 200
   position absolute

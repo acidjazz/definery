@@ -5,7 +5,6 @@ block content
   include ../pub/svg/star.svg
   include ../pub/svg/product.svg
 
-
   .colors
     .cyan
       .background.definery.on
@@ -26,9 +25,6 @@ block content
   .border.horiz.left.definery
   .border.vert.bottom.definery
   .border.horiz.right.definery
-
-
-
 
   .content.definery.on
     .inner
@@ -72,11 +68,25 @@ block content
         .line
         .nav.nav_product.nav_to_definery(data-dir="down",data-from="product",data-to="definery") to definery copy
 
+  .menu
+    .option.option_contact.off(data-option='contact') contact
+
   .dots
     .dot.dot_definery.on(data-sect="definery",data-num=1): .inner
     .dot.dot_iterate.off(data-sect="iterate",data-num=2): .inner
     .dot.dot_navigate.off(data-sect="navigate",data-num=3): .inner
     .dot.dot_product.off(data-sect="product",data-num=4): .inner
+
+  .contact.off
+    .inner
+      .email hello@definery.io
+      .socials
+        a.social.facebook(href=data.meta.social.facebook,target='_blank')
+          include ../pub/svg/social/facebook.svg
+        .social.instagram(href=data.meta.social.instagram,target='_blank')
+          include ../pub/svg/social/instagram.svg
+        .social.linkedin(href=data.meta.social.linkedin,target='_blank')
+          include ../pub/svg/social/linkedin.svg
 
   script(type='text/javascript').
     Loader.load('/jst/detect.js', 'Detect', function() {
