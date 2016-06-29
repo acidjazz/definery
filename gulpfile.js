@@ -109,8 +109,8 @@ gulp.task('sync', function() {
       baseDir: 'pub/',
     },
     ghostMode: {
-      clicks: true,
-      forms: true,
+      clicks: false,
+      forms: false,
       scroll: false
     },
     scrollProportionally: false,

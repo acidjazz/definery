@@ -97,10 +97,11 @@
     overflow hidden
     > .inner
       border-radius 50%
+      //transition all 0.75s ease-in-out 
       transition all 0.25s ease-in-out 
     &.off > .inner
-      width 1px
-      height 1px
+      width 0px
+      height 0px
       transform translate(5px, 5px)
       border 5px solid gc(white1)
     &.on > .inner
@@ -156,11 +157,11 @@
   > .svg.definery > svg > polygon
     fill gc(teal1)
   > .svg.iterate > svg > polygon
-    fill gc(blue1)
+    fill gc(blue2)
   > .svg.navigate > svg > polygon
-    fill gc(green1)
+    fill gc(teal1)
   > .svg.product > svg > polygon
-    fill gc(pink1)
+    fill gc(pink2)
 
 .blend-multiply
   z-index 100
@@ -223,13 +224,13 @@
   z-index 100
   onoff()
   &.cInFromBottom
-    animation cInFromBottom 0.6s ease-in both 0.15s
+    animation cInFromBottom 0.6s ease-in-out both 0.15s
   &.cInFromTop
-    animation cInFromTop 0.6s ease-in both 0.15s
+    animation cInFromTop 0.6s ease-in-out both 0.15s
   &.cOutToTop
-    animation cOutToTop 0.6s ease-in both
+    animation cOutToTop 0.6s ease-in-out both
   &.cOutToBottom
-    animation cOutToBottom 0.6s ease-in both
+    animation cOutToBottom 0.6s ease-in-out both
 
   > .inner
     position relative
@@ -310,7 +311,7 @@
 @keyframes inFromTop
   from
     opacity 0
-    transform translate(0, -100px) scale(1.1)
+    transform translate(0, -100px) scale(1)
   to
     opacity 1
     transform translate(0, 0) scale(1)
@@ -319,7 +320,7 @@
 @keyframes inFromBottom
   from
     opacity 0
-    transform translate(0, 100px) scale(1.1)
+    transform translate(0, 100px) scale(1)
   to
     opacity 1
     transform translate(0, 0) scale(1)
@@ -331,7 +332,7 @@
     transform translate(0, 0) scale(1)
   to
     opacity 0
-    transform translate(0, -100px) scale(1.1)
+    transform translate(0, -100px) scale(1)
 
 
 @keyframes outToBottom
@@ -340,7 +341,7 @@
     transform translate(0, 0) scale(1)
   to
     opacity 0
-    transform translate(0, 100px) scale(1.1)
+    transform translate(0, 100px) scale(1)
 
 
 @keyframes cInFromTop
