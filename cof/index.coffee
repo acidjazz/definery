@@ -74,12 +74,14 @@ Index =
     if direction is 'down' or direction is 'right'
       if (Index.current == (Index.nav.length-1))
         Index.current = 0
+        return true
       else
         Index.current++
 
     if direction is 'up' or direction is 'left'
       if (Index.current == 0)
         Index.current = Index.nav.length-1
+        return true
       else
         Index.current--
 
