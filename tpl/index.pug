@@ -52,7 +52,7 @@ block content
         .nav.nav_iterate.nav_to_navigate(data-dir="down",data-from="iterate",data-to="navigate")
           .arrow
             include ../pub/svg/arrow.svg
-          .copy how we collaborate
+          //.copy how we collaborate
 
   .content.navigate.off
     .inner
@@ -65,7 +65,7 @@ block content
         .nav.nav_navigate.nav_to_product(data-dir="down",data-from="navigate",data-to="product")
           .arrow
             include ../pub/svg/arrow.svg
-          .copy the result
+          //.copy the result
 
   .content.product.off
     .inner
@@ -91,6 +91,8 @@ block content
     .dot.dot_product.off(data-sect="product",data-num=4): .inner
 
   .contact.off
+    .close.contact_cta
+      include ../pub/svg/close.svg
     .inner
       .email hello@definery.io
       .socials

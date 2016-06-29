@@ -52,6 +52,23 @@
   right 0
   z-index 205
   onoff()
+  > .close
+    cursor pointer
+    position absolute
+    width 30px
+    height 30px
+    right 60px
+    top 80px
+    &:hover > svg path
+      fill gc(teal3)
+    > svg
+      path
+        fill gc(teal1)
+        transition fill 0.2s linear
+
+    > svg
+      width inherit
+      height inherit
   > .inner
     width 310px
     height 170px
