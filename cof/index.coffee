@@ -4,6 +4,9 @@ Index =
   timeout: 1300
   paused: false
 
+  safari: false
+  
+
   colors:
     'definery': data.color.teal1
     'iterate': data.color.blue1
@@ -13,7 +16,7 @@ Index =
   current: 0
 
   i: ->
-
+    Index.safari = !!navigator.userAgent.match(/Version\/[\d\.\ ]+Safari/)
     Index.handlers()
 
   handlers: ->
@@ -164,5 +167,8 @@ Index =
     _.on ".dots > .dot.dot_#{current}"
 
     console.log "$(.to_#{current})[each].beginElement())"
-    $(".to_#{current}").each (i, el) ->
-      el.beginElement()
+
+    if !Index.safari
+      $(".to_#{current}").each (i, el) ->
+        el.beginElement()
+
