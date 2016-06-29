@@ -5,6 +5,7 @@ Index =
   paused: false
 
   safari: false
+  ios: false
   
 
   colors:
@@ -18,6 +19,7 @@ Index =
   i: ->
     Index.safari = !!navigator.userAgent.match(/Version\/[\d\.\ ]+Safari/)
     Index.handlers()
+    Index.ios = true if navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPhone/i)
 
   handlers: ->
 
@@ -168,7 +170,7 @@ Index =
 
     console.log "$(.to_#{current})[each].beginElement())"
 
-    if !Index.safari
+    if !Index.safari and !Index.ios
       $(".to_#{current}").each (i, el) ->
         el.beginElement()
 
