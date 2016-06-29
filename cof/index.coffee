@@ -109,10 +109,12 @@ Index =
 
     for sect in Index.nav
       if sect isnt current
-        $('.colors .svg').removeClass sect
+        if !Index.safari and !Index.ios
+          $('.colors .svg').removeClass "star_#{sect}"
         $('.border').removeClass sect
 
-    $('.colors .svg').addClass current
+    if !Index.safari and !Index.ios
+      $('.colors .svg').addClass "star_#{current}"
     $('.border').addClass current
 
     if direction is 'down' or direction is 'right'
