@@ -26,10 +26,9 @@ Index =
 
     $('.contact_cta').on 'click', Index.contact
 
-
   contact: ->
     _.swap '.contact'
-    _.swap '.option_contact'
+    _.swap '.menu'
 
   navHandler: ->
 

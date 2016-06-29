@@ -1,4 +1,3 @@
-
 extends inc/layout
 
 block content
@@ -81,7 +80,7 @@ block content
           .copy get in touch
 
 
-  .menu
+  .menu.on
     .option.contact_cta.option_contact.off(data-option='contact') contact
 
   .dots
@@ -91,10 +90,12 @@ block content
     .dot.dot_product.off(data-sect="product",data-num=4): .inner
 
   .contact.off
+    .color
     .close.contact_cta
       include ../pub/svg/close.svg
     .inner
-      .email hello@definery.io
+      .email 
+        input(type="text",value="hello@definery.io",readonly)
       .socials
         a.social.facebook(href=data.meta.social.facebook,target='_blank')
           include ../pub/svg/social/facebook.svg

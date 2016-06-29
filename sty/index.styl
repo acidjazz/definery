@@ -33,6 +33,7 @@
   top 30px
   right 60px
   z-index 210
+  onoff()
   > .option
     cursor pointer
     color gc(white1)
@@ -45,20 +46,28 @@
 
 .contact
   position absolute
-  background-color gc(teal2)
   top 0
   bottom 0
   left 0
   right 0
   z-index 205
   onoff()
+  > .color
+    position absolute
+    animation cellInXFull 0.2s ease-in-out both
+    animation-delay 0s
+    background-color gc(teal2)
+    top 0
+    bottom 0
+    left 0
+    right 0
   > .close
     cursor pointer
     position absolute
     width 30px
     height 30px
     right 60px
-    top 80px
+    top 30px
     &:hover > svg path
       fill gc(teal3)
     > svg
@@ -70,16 +79,27 @@
       width inherit
       height inherit
   > .inner
+    animation fadeIn 0.2s ease-in-out both
+    animation-delay 0.3s
     width 310px
-    height 170px
+    height 160px
     position absolute
     top 50%
     left 50%
     margin-left -155px
-    margin-top -85px
+    margin-top -80px
     > .email
-      gf(h2)
-      color gc(teal1)
+      > input
+        color gc(teal1)
+        gf(h2)
+        padding 0
+        margin 0 
+        border 0
+        background-color transparent
+        text-align center
+        width 310px
+        &:active
+          outline none
     > .socials
       > .social
         width 40px
@@ -88,7 +108,7 @@
         padding 20px
         display inline-block
         border-radius 50%
-        margin 50px 10px 0 10px
+        margin 30px 10px 0 10px
         cursor pointer
         transition background-color 0.2s linear
         &:hover
@@ -415,17 +435,26 @@
 
 
 @media all and (min-width: 1px) and (max-width: 1000px)
-  .svg
-    margin-left -250px
-    opacity 0.2
-    overflow hidden
-  .video
-    margin-left -250px
+  .content > .inner > .logo > svg > g > path:nth-child(1)
     display none
+  .svg
+    overflow hidden
+    width 100px
+    height 100px
+    left auto
+    right 10%
+    margin-top -240px
+  .video
+    width 100px
+    height 100px
+    left auto
+    right 10%
+    margin-top -240px
   .content
-    width 250px
+    width 70vw
     height 400px
-    margin-left -125px
+    left 15vw
+    margin-left 0
     margin-top -200px
   .background
     animation none !important
