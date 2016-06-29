@@ -24,6 +24,12 @@ Index =
     $('.dots > .dot').on 'click', Index.dotHandler
     $('.menu > .option').on 'click', Index.menuHandler
 
+    $('.contact_cta').on 'click', Index.contact
+
+
+  contact: ->
+    _.swap ('.contact')
+
   navHandler: ->
 
     return true if Index.paused
