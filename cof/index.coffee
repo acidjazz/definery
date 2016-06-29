@@ -1,7 +1,7 @@
 Index =
 
   nav: ['definery','iterate', 'navigate', 'product']
-  timeout: 2000
+  timeout: 1300
   paused: false
 
   colors:
@@ -38,7 +38,7 @@ Index =
     Index.paused = true
     setTimeout ->
       Index.paused = false
-    , Index.timeout
+    ,Index.timeout
 
 
   dotHandler: ->
@@ -61,7 +61,7 @@ Index =
 
   navigate: (direction) ->
 
-    #console.log 'Index.navigate() direction: ' + direction
+    return true if Index.paused
 
     previous = Index.nav[Index.current]
 
@@ -81,7 +81,14 @@ Index =
 
     Index.transit(previous, current, direction)
 
+    Index.paused = true
+    setTimeout ->
+      Index.paused = false
+    , Index.timeout
+
   transit: (previous, current, direction) ->
+
+    return true if previous is undefined
 
     # i will chestbump my monitor if this works
     setTimeout ->
@@ -150,7 +157,6 @@ Index =
     _.off '.dots > .dot'
     _.on ".dots > .dot.dot_#{current}"
 
+    console.log "$(.to_#{current})[each].beginElement())"
     $(".to_#{current}").each (i, el) ->
       el.beginElement()
-      #console.log  "#{current}.beginElement()"
-

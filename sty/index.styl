@@ -269,26 +269,35 @@
       padding-bottom 20px
       animation fadeIn 0.5s ease-in-out both
       animation-delay 0.1s
-    > .bottom > .nav, > .top > .nav
+    > .bottom > .nav
       cursor pointer
-      gf(copy1b)
       user-select none
       touch-callout none
       -webkit-touch-callout none
       transition transform 0.5s ease-in
       -webkit-tap-highlight-color rgba(255, 255, 255, 0)
-      tap-highlight-color rgba(255, 255, 255, 0)
       &:hover
         transform translate(10px, 0)
         transition transform 2s ease-out
+      tap-highlight-color rgba(255, 255, 255, 0)
+    > .bottom > .nav, > .top > .nav
+      gf(copy1b)
       &.nav_definery
         color gc(teal1)
+        > .arrow > svg path
+          fill gc(teal1)
       &.nav_iterate
         color gc(bblue)
+        > .arrow > svg path
+          fill gc(bblue)
       &.nav_navigate
         color gc(bgreen)
+        > .arrow > svg path
+          fill gc(bgreen)
       &.nav_product
         color gc(bpink)
+        > .arrow > svg path
+          fill gc(bpink)
     > .bottom
       position absolute
       bottom 0
@@ -300,6 +309,15 @@
         background-color gc(white1)
       > .nav
         padding 20px 0 0 0
+        > .arrow
+          float left
+          width 30px
+          height 30px
+          > svg
+            width inherit
+            height inherit
+        > .copy
+          margin 5px 0 0 40px
 
 
 @keyframes fadeIn
