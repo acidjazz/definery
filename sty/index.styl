@@ -467,6 +467,24 @@
   .background
     animation none !important
 
+@media all and (min-width: 1px) and (max-width: 1000px) and (orientation: landscape)
+  .content
+    height 320px
+    margin-top -160px
+    > .inner
+      > .title, > .logo
+        width 50vw
+        margin-bottom 50px
+      > .logo
+        margin-top 25px
+        margin-bottom 25px
+  .svg
+    margin-top -130px
+
+@media all and (min-width: 1px) and (max-width: 325px)
+  .svg
+    display none !important
+
   @keyframes inFromTop
     from
       opacity 0
