@@ -173,4 +173,7 @@ Index =
     if !Index.safari and !Index.ios
       $(".to_#{current}").each (i, el) ->
         el.beginElement()
+    else
+      _.off '.svg.star'
+      _.on ".svg.star_#{current}"
 

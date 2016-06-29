@@ -10,19 +10,28 @@ block content
       .background.iterate.off
       .background.navigate.off
       .background.product.off
-    .svg.star.definery.on
+    .svg.star.star_definery.on
       include ../pub/svg/all.svg
-    .svg.star.iterate.off
+    .svg.star.star_iterate.off
       include ../pub/svg/iterate.svg
-    .svg.star.navigate.off
-      include ../pub/svg/iterate.svg
+    .svg.star.star_navigate.off
+      include ../pub/svg/navigate.svg
+    .svg.star.star_product.off
+      include ../pub/svg/product.svg
   .blend-multiply
     .video#video
       video(loop,muted,autoplay,poster="/img/poster.jpg")
         source(src="/vid/fog.mp4")
     .blend-screen
-      .svg.star
+      .svg.star.star_definery.on
         include ../pub/svg/all.svg
+      .svg.star.star_iterate.off
+        include ../pub/svg/iterate.svg
+      .svg.star.star_navigate.off
+        include ../pub/svg/navigate.svg
+      .svg.star.star_product.off
+        include ../pub/svg/product.svg
+
 
   .border.vert.top.definery
   .border.horiz.left.definery
