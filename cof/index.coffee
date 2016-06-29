@@ -28,7 +28,8 @@ Index =
 
 
   contact: ->
-    _.swap ('.contact')
+    _.swap '.contact'
+    _.swap '.option_contact'
 
   navHandler: ->
 
