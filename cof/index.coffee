@@ -17,7 +17,6 @@ Index =
   i: ->
 
     #TweenLite.set("svg", {visibility:"visible"})
-    Index.tl = new TimelineMax()
 
     #Index.tl.to("#d1a", 1, {morphSVG: "#definery1a"}, '-=1')
     #Index.tl.to("#d2a", 1, {morphSVG: "#definery2a"}, '-=1')
@@ -176,11 +175,12 @@ Index =
     _.off '.dots > .dot'
     _.on ".dots > .dot.dot_#{current}"
 
-    Index.tl
-      .to("#d1a", 1, {morphSVG: "##{current}1a", ease:Back.easeInOut}, '-=1')
-      .to("#d2a", 1, {morphSVG: "##{current}2a", ease:Back.easeInOut}, '-=1')
-      .to("#d3a", 1, {morphSVG: "##{current}3a", ease:Back.easeInOut}, '-=1')
-      .to("#d1b", 1, {morphSVG: "##{current}1b", ease:Back.easeInOut}, '-=1')
-      .to("#d2b", 1, {morphSVG: "##{current}2b", ease:Back.easeInOut}, '-=1')
-      .to("#d3b", 1, {morphSVG: "##{current}3b", ease:Back.easeInOut}, '-=1')
+    tl = new TimelineMax({repeat: 0})
+    tl
+      .to("#d1a", 1, {morphSVG: "##{current}1a", ease:Back.easeOut}, '-=1')
+      .to("#d2a", 1, {morphSVG: "##{current}2a", ease:Back.easeOut}, '-=1')
+      .to("#d3a", 1, {morphSVG: "##{current}3a", ease:Back.easeOut}, '-=1')
+      .to("#d1b", 1, {morphSVG: "##{current}1b", ease:Back.easeOut}, '-=1')
+      .to("#d2b", 1, {morphSVG: "##{current}2b", ease:Back.easeOut}, '-=1')
+      .to("#d3b", 1, {morphSVG: "##{current}3b", ease:Back.easeOut}, '-=1')
 
