@@ -92,7 +92,7 @@
       color gc(teal1)
       gf(h2)
       padding 0
-      margin 0 
+      margin 0
       border 0
       background-color transparent
       text-align center
@@ -135,8 +135,8 @@
     overflow hidden
     > .inner
       border-radius 50%
-      //transition all 0.75s ease-in-out 
-      transition all 0.25s ease-in-out 
+      //transition all 0.75s ease-in-out
+      transition all 0.25s ease-in-out
     &.off > .inner
       width 0px
       height 0px
@@ -240,8 +240,11 @@
   > svg
     width inherit
     height inherit
+    > polygon.hidden
+      visibility hidden
     > polygon
       fill gc(black1)
+      /*
       &:nth-child(3)
         animation fadeIn 0.5s ease-in-out both
         animation-delay 0.5s
@@ -251,6 +254,7 @@
       &:nth-child(1)
         animation fadeIn 0.5s ease-in-out both
         animation-delay 1.5s
+      */
 
 .content
   position absolute

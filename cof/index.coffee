@@ -4,9 +4,7 @@ Index =
   timeout: 1300
   paused: false
 
-  safari: false
-  ios: false
-  
+  tl: false
 
   colors:
     'definery': data.color.teal1
@@ -17,9 +15,19 @@ Index =
   current: 0
 
   i: ->
-    Index.safari = !!navigator.userAgent.match(/Version\/[\d\.\ ]+Safari/)
+
+    #TweenLite.set("svg", {visibility:"visible"})
+    Index.tl = new TimelineMax()
+
+    #Index.tl.to("#d1a", 1, {morphSVG: "#definery1a"}, '-=1')
+    #Index.tl.to("#d2a", 1, {morphSVG: "#definery2a"}, '-=1')
+    #Index.tl.to("#d3a", 1, {morphSVG: "#definery3a"}, '-=1')
+
+    #Index.tl.to("#d1b", 1, {morphSVG: "#definery1b"}, '-=1')
+    #Index.tl.to("#d2b", 1, {morphSVG: "#definery2b"}, '-=1')
+    #Index.tl.to("#d3b", 1, {morphSVG: "#definery3b"}, '-=1')
+
     Index.handlers()
-    Index.ios = true if navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPhone/i)
 
   handlers: ->
 
@@ -109,12 +117,10 @@ Index =
 
     for sect in Index.nav
       if sect isnt current
-        if !Index.safari and !Index.ios
-          $('.colors .svg').removeClass "star_#{sect}"
+        $('.colors .svg').removeClass "star_#{sect}"
         $('.border').removeClass sect
 
-    if !Index.safari and !Index.ios
-      $('.colors .svg').addClass "star_#{current}"
+    $('.colors .svg').addClass "star_#{current}"
     $('.border').addClass current
 
     if direction is 'down' or direction is 'right'
@@ -170,12 +176,11 @@ Index =
     _.off '.dots > .dot'
     _.on ".dots > .dot.dot_#{current}"
 
-    console.log "$(.to_#{current})[each].beginElement())"
-
-    if !Index.safari and !Index.ios
-      $(".to_#{current}").each (i, el) ->
-        el.beginElement()
-    else
-      _.off '.svg.star'
-      _.on ".svg.star_#{current}"
+    Index.tl
+      .to("#d1a", 1, {morphSVG: "##{current}1a", ease:Back.easeInOut}, '-=1')
+      .to("#d2a", 1, {morphSVG: "##{current}2a", ease:Back.easeInOut}, '-=1')
+      .to("#d3a", 1, {morphSVG: "##{current}3a", ease:Back.easeInOut}, '-=1')
+      .to("#d1b", 1, {morphSVG: "##{current}1b", ease:Back.easeInOut}, '-=1')
+      .to("#d2b", 1, {morphSVG: "##{current}2b", ease:Back.easeInOut}, '-=1')
+      .to("#d3b", 1, {morphSVG: "##{current}3b", ease:Back.easeInOut}, '-=1')
 

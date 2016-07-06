@@ -42,7 +42,10 @@ gulp.task('vendors', function() {
 
   gulp.src([
     'bower_components/jquery/dist/jquery.js',
-    'bower_components/jquery.scrollTo/jquery.scrollTo.min.js'
+    'bower_components/jquery.scrollTo/jquery.scrollTo.min.js',
+    'bower_components/gsap/src/uncompressed/TweenMax.js',
+    'bower_components/gsap/src/uncompressed/TweenLite.js',
+    'pub/jst/lib/MorphSVGPlugin.min.js'
   ])
   .pipe(sourcemaps.init())
   .pipe(uglify())
