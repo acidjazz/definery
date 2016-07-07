@@ -167,11 +167,8 @@ Index =
 
     tl = new TimelineMax({repeat: 0})
     tl
-      .to("#d1a", 0.8, {morphSVG: "##{current}1a", ease:Power3.easeInOut}, '-=0.8')
-      .to("#d2a", 0.8, {morphSVG: "##{current}2a", ease:Power3.easeInOut}, '-=0.8')
-      .to("#d3a", 0.8, {morphSVG: "##{current}3a", ease:Power3.easeInOut}, '-=0.8')
-      .to("#d1b", 0.8, {morphSVG: "##{current}1b", ease:Power3.easeInOut}, '-=0.8')
-      .to("#d2b", 0.8, {morphSVG: "##{current}2b", ease:Power3.easeInOut}, '-=0.8')
-      .to("#d3b", 0.8, {morphSVG: "##{current}3b", ease:Power3.easeInOut}, '-=0.8')
+      .to(".d1", 0.8, {morphSVG: ".#{current}1", ease:Power3.easeInOut}, '-=0.8')
+      .to(".d2", 0.8, {morphSVG: ".#{current}2", ease:Power3.easeInOut}, '-=0.8')
+      .to(".d3", 0.8, {morphSVG: ".#{current}3", ease:Power3.easeInOut}, '-=0.8')
 
 

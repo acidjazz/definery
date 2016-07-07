@@ -1,22 +1,28 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 485 560" xml:space="preserve"></polygon>
 
-  <polygon id="d1a" points="485,280 142,478 142,351.3 375.2,216.6"></polygon>
-  <polygon id="d2a" points="0,560 110,496.5 110,227.5 0,164"></polygon>
-  <polygon id="d3a" points="0,0 343.2,198.1 233.2,261.6 0,127"></polygon>
+  <polygon class="d1" points="485,280 142,478 142,351.3 375.2,216.6"></polygon>
+  <polygon class="d2" points="0,560 110,496.5 110,227.5 0,164"></polygon>
+  <polygon class="d3" points="0,0 343.2,198.1 233.2,261.6 0,127"></polygon>
 
-  <polygon id="definery1a" class="hidden" points="485,280 142,478 142,351.3 375.2,216.6"></polygon>
-  <polygon id="iterate1a" class="hidden" points="322.2,46.6 462.2,76.6 462.2,496.6 322.2,526.6"></polygon>
-  <polygon id="navigate1a" class="hidden" points="174.1,330.6 5.7,280 174.1,229.4 159,279.9"></polygon>
-  <polygon id="product1a" class="hidden" points="251.9,288 457,176 457,427.9 251.9,539.8 "></polygon>
+  <polygon class="hidden definery1"  points="485,280 142,478 142,351.3 375.2,216.6"></polygon>
+  <polygon class="hidden iterate1"  points="322.2,46.6 462.2,76.6 462.2,496.6 322.2,526.6"></polygon>
 
-  <polygon id="definery2a" class="hidden" points="0,560 110,496.5 110,227.5 0,164"></polygon>
-  <polygon id="iterate2a" class="hidden" points="182.2,76.6 302.2,106.6 302.2,466.6 182.2,496.6"></polygon>
-  <polygon id="navigate2a" class="hidden" points="242.9,43 314.1,280 242.9,517 171.6,280"></polygon>
-  <polygon id="product2a" class="hidden" points="242.5,274.4 457,157.4 242.5,40.2 28,157.4"></polygon>
+  <polygon class="hidden navigate1"  points="119.9,255.3 0,463 243,463 243,326.4"></polygon>
 
-  <polygon id="definery3a" class="hidden" points="0,0 343.2,198.1 233.2,261.6 0,127"></polygon>
-  <polygon id="iterate3a" class="hidden" points="52.2,116.6 162.2,136.6 162.2,436.6 52.2,456.6"></polygon>
-  <polygon id="navigate3a" class="hidden" points="311.3,330.6 479.7,280 311.3,229.4 326.4,279.9"></polygon>
-  <polygon id="product3a" class="hidden" points="233.1,288 28,176 28,427.9 233.1,539.8"></polygon>
+  <polygon class="hidden product1"  points="251.9,288 457,176 457,427.9 251.9,539.8 "></polygon>
+
+  <polygon class="hidden definery2"  points="0,560 110,496.5 110,227.5 0,164"></polygon>
+  <polygon class="hidden iterate2"  points="182.2,76.6 302.2,106.6 302.2,466.6 182.2,496.6"></polygon>
+
+  <polygon class="hidden navigate2"  points="380.4,255.9 500,463 257,463 257,327.2"></polygon>
+
+  <polygon class="hidden product2"  points="242.5,274.4 457,157.4 242.5,40.2 28,157.4"></polygon>
+
+  <polygon class="hidden definery3"  points="0,0 343.2,198.1 233.2,261.6 0,127"></polygon>
+  <polygon class="hidden iterate3"  points="52.2,116.6 162.2,136.6 162.2,436.6 52.2,456.6"></polygon>
+
+  <polygon class="hidden navigate3"  points="373.4,243.8 250,30 126.9,243.2 250.7,314.7"></polygon>
+
+  <polygon class="hidden product3"  points="233.1,288 28,176 28,427.9 233.1,539.8"></polygon>
 
 </svg>

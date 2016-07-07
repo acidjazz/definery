@@ -18,7 +18,6 @@ _ =
     return true
 
   off: (el, p={}) ->
-    console.log p
 
     if p.offing and p.offtime > 0
 
