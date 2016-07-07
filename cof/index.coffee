@@ -1,7 +1,7 @@
 Index =
 
   nav: ['definery','iterate', 'navigate', 'product']
-  timeout: 1300
+  timeout: 1000
   paused: false
 
   tl: false
