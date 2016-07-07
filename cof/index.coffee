@@ -29,7 +29,7 @@ Index =
     $('.contact_cta').on 'click', Index.contact
 
   contact: ->
-    _.swap '.contact'
+    _.swap '.contact', offing: true, offtime: 0.4
     _.swap '.menu'
 
   navHandler: ->

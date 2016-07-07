@@ -1,45 +1,51 @@
 _ =
 
-  off: (el) ->
-    i = 0
-    len = arguments.length
+  p:
+    offing: false
+    offtime: 0
 
-    while i isnt len
-      if arguments[i] instanceof jQuery
-        arguments[i].removeClass("on").addClass "off"
-      else
-        $(arguments[i]).removeClass("on").addClass "off"
-      i++
+  turn: (el, remove=false, add=false) ->
+
+    if el not instanceof jQuery
+      el = $(el)
+
+    if remove isnt false
+      el.removeClass(remove)
+
+    if add isnt false
+      el.addClass(add)
+
+    return true
+
+  off: (el, p={}) ->
+    console.log p
+
+    if p.offing and p.offtime > 0
+
+      _.turn el, false, 'offing'
+      setTimeout ->
+        _.turn el, 'offing', false
+        _.turn el, 'on', 'off'
+      , p.offtime*1000 + 100
+
+    else
+      _.turn el, 'on', 'off'
+
     return
 
-  on: (el) ->
-    i = 0
-    len = arguments.length
+  on: (el, p) ->
+    _.turn el, 'off', 'on'
 
-    while i isnt len
-      if arguments[i] instanceof jQuery
-        arguments[i].removeClass("off").addClass "on"
-      else
-        $(arguments[i]).removeClass("off").addClass "on"
-      i++
-    return
+  swap: (el, p) ->
 
-  swap: (el) ->
-    i = 0
-    len = arguments.length
+    if el not instanceof jQuery
+      el = $(el)
 
-    while i isnt len
-      if arguments[i] instanceof jQuery
-        if arguments[i].hasClass 'off'
-          _.on arguments[i]
-        else
-          _.off arguments[i]
-      else
-        if $(arguments[i]).hasClass 'off'
-          _.on $(arguments[i])
-        else
-          _.off $(arguments[i])
-      i++
+    if el.hasClass 'off'
+      _.on el, p
+    else
+      _.off el, p
+
     return
 
   encode: (str) ->

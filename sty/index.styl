@@ -52,6 +52,13 @@
   right 0
   z-index 205
   onoff()
+  &.offing
+    animation cellOutXFull 0.2s ease-in-out both
+    animation-delay 0.2s
+    > .inner
+      animation fadeOut 0.2s ease-in-out both
+      animation-delay 0s
+
   > .color
     position absolute
     animation cellInXFull 0.2s ease-in-out both
