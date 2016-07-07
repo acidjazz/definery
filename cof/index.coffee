@@ -54,7 +54,7 @@ Index =
     return true if Index.paused
 
     previous = $('.dots .dot.on').data 'sect'
-    pnum = $('.dots .dot.on').data  'num'
+    pnum = $('.dots .dot.on').data 'num'
     current = $(this).data 'sect'
     cnum = $(this).data 'num'
 
@@ -63,6 +63,7 @@ Index =
     Index.transit previous, current, direction
 
     Index.paused = true
+    Index.current = cnum
     setTimeout ->
       Index.paused = false
     , Index.timeout
@@ -75,13 +76,15 @@ Index =
 
     if direction is 'down' or direction is 'right'
       if (Index.current == (Index.nav.length-1))
-        Index.current = 0
+        return true
+        #Index.current = 0
       else
         Index.current++
 
     if direction is 'up' or direction is 'left'
       if (Index.current == 0)
-        Index.current = Index.nav.length-1
+        return true
+        #Index.current = Index.nav.length-1
       else
         Index.current--
 
