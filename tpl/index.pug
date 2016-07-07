@@ -77,19 +77,11 @@ block content
             include ../pub/svg/arrow.svg
           .copy get in touch
 
-  .menu.on
-    .option.contact_cta.option_contact.off(data-option='contact') contact us
-
-  .dots
-    .dot.dot_definery.on(data-sect="definery",data-num=0): .inner
-    .dot.dot_iterate.off(data-sect="iterate",data-num=1): .inner
-    .dot.dot_navigate.off(data-sect="navigate",data-num=2): .inner
-    .dot.dot_product.off(data-sect="product",data-num=3): .inner
-
   .contact.off
     .color
     .close.contact_cta
       include ../pub/svg/close.svg
+
     .inner
       a.email(href="mailto:hello@definery.io") hello@definery.io
       .socials
@@ -100,6 +92,16 @@ block content
         a.social.linkedin(href=data.meta.social.linkedin,target='_blank')
           include ../pub/svg/social/linkedin.svg
 
+
+
+  .menu.on
+    .option.contact_cta.option_contact.off(data-option='contact') contact us
+
+  .dots
+    .dot.dot_definery.on(data-sect="definery",data-num=0): .inner
+    .dot.dot_iterate.off(data-sect="iterate",data-num=1): .inner
+    .dot.dot_navigate.off(data-sect="navigate",data-num=2): .inner
+    .dot.dot_product.off(data-sect="product",data-num=3): .inner
   script(type='text/javascript').
     Loader.load('/jst/detect.js', 'Detect', function() {
       Loader.load('/jst/index.js', 'Index');
