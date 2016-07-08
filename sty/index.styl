@@ -154,6 +154,7 @@
       height 16px
       border 2px solid gc(white1)
       transform translate(0px, 0px)
+
 .colors
   position absolute
   top 0
@@ -166,13 +167,24 @@
     left 0
     width 100%
     height 100%
-    background-color gc(black1)
+    //background-color gc(black1)
+    transition background-color 1s ease-out 0s
+    &.definery
+      background-color gc(teal2)
+    &.iterate
+      background-color gc(bblue)
+    &.product
+      background-color gc(bpink)
+    &.navigate
+      background-color gc(bgreen)
+
     > .background
       position absolute
       width 100%
       height 100%
       background-size cover
       z-index 0
+      opacity 0.25
       &.off
         display none
       &.on
@@ -188,14 +200,12 @@
 
       &.inFromBottom
         animation inFromBottom 1s ease-out both
-        z-index 10
       &.inFromTop
-        z-index 10
         animation inFromTop 1s ease-out both
       &.outToTop
-        animation outToTop 1s ease-in both
+        animation outToTop 0.7s ease-in both
       &.outToBottom
-        animation outToBottom 1s ease-in both
+        animation outToBottom 0.7s ease-in both
   > .svg.star_definery > svg > polygon
     fill gc(teal1)
   > .svg.star_iterate > svg > polygon
@@ -374,12 +384,27 @@
   to
     opacity 1
 
+@keyframes fadeInHalf
+  from
+    opacity 0
+  to
+    opacity 0.8
+
+@keyframes fadeOutHalf
+  from
+    opacity 0.8
+  to
+    opacity 0
+
+
+
+
 @keyframes inFromTop
   from
     opacity 0
     transform translate(0, -100px) scale(1)
   to
-    opacity 1
+    opacity 0.25
     transform translate(0, 0) scale(1)
 
 
@@ -388,13 +413,13 @@
     opacity 0
     transform translate(0, 100px) scale(1)
   to
-    opacity 1
+    opacity 0.25
     transform translate(0, 0) scale(1)
 
 
 @keyframes outToTop
   from
-    opacity 1
+    opacity 0.25
     transform translate(0, 0) scale(1)
   to
     opacity 0
@@ -403,7 +428,7 @@
 
 @keyframes outToBottom
   from
-    opacity 1
+    opacity 0.25
     transform translate(0, 0) scale(1)
   to
     opacity 0
@@ -493,39 +518,4 @@
   .menu
     top 10px
     right 20px
-
-  @keyframes inFromTop
-    from
-      opacity 0
-      transform translate(0, 0) scale(1)
-    to
-      opacity 1
-      transform translate(0, 0) scale(1)
-
-
-  @keyframes inFromBottom
-    from
-      opacity 0
-      transform translate(0, 0) scale(1)
-    to
-      opacity 1
-      transform translate(0, 0) scale(1)
-
-
-  @keyframes outToTop
-    from
-      opacity 1
-      transform translate(0, 0) scale(1)
-    to
-      opacity 0
-      transform translate(0, 0) scale(1)
-
-
-  @keyframes outToBottom
-    from
-      opacity 1
-      transform translate(0, 0) scale(1)
-    to
-      opacity 0
-      transform translate(0, 0) scale(1)
 

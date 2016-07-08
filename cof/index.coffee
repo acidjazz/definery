@@ -110,9 +110,11 @@ Index =
       if sect isnt current
         $('.colors .svg').removeClass "star_#{sect}"
         $('.border').removeClass sect
+        $('.cyan').removeClass sect
 
     $('.colors .svg').addClass "star_#{current}"
     $('.border').addClass current
+    $('.cyan').addClass current
 
     if direction is 'down' or direction is 'right'
 
