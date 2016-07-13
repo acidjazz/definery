@@ -100,6 +100,9 @@ Index =
 
     return true if previous is undefined
 
+    if current isnt 'definery' then _.on '.arrow.up' else _.off '.arrow.up'
+
+
     # i will chestbump my monitor if this works
     setTimeout ->
       $('meta[name=theme-color]').remove()

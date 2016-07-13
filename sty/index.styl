@@ -39,8 +39,6 @@
     color gc(white1)
     padding 5px
     transition all 0.2s linear
-    &:hover
-      border-bottom 1px solid gc(white1)
     &.on
       border-bottom 2px solid gc(white1)
 
@@ -214,9 +212,9 @@
   > .svg.star_definery > svg > polygon
     fill gc(teal1)
   > .svg.star_iterate > svg > polygon
-    fill gc(blue2)
+    fill gc(blue1)
   > .svg.star_navigate > svg > polygon
-    fill gc(teal1)
+    fill gc(bgreen)
   > .svg.star_product > svg > polygon
     fill gc(pink1)
 
@@ -337,22 +335,47 @@
       -webkit-touch-callout none
       -webkit-tap-highlight-color rgba(255, 255, 255, 0)
       tap-highlight-color rgba(255, 255, 255, 0)
+    > .bottom > .nav > .copy
+      border 2px solid gc(bpink)
+      padding 16px 56px
+      text-transform uppercase
+      transition background-color 0.2s linear 0s, color 0.2s linear 0.05s
+      &:hover
+        background-color gc(bpink)
+        color gc(white1)
+
     > .bottom > .nav, > .top > .nav
-      gf(copy1b)
+      gf(copy1s)
       &.nav_definery
         color gc(teal1)
+        > .arrow
+          border 2px solid gc(teal1)
         > .arrow > svg path
           fill gc(teal1)
+        > .arrow:hover
+            background-color gc(teal1)
       &.nav_iterate
         color gc(bblue)
+        > .arrow
+          border 2px solid gc(bblue)
+        > .arrow:hover
+            background-color gc(bblue)
         > .arrow > svg path
           fill gc(bblue)
       &.nav_navigate
         color gc(bgreen)
+        > .arrow
+          border 2px solid gc(bgreen)
+        > .arrow:hover
+            background-color gc(bgreen)
         > .arrow > svg path
           fill gc(bgreen)
       &.nav_product
         color gc(bpink)
+        > .arrow
+          border 2px solid gc(bpink)
+        > .arrow:hover
+            background-color gc(bpink)
         > .arrow > svg path
           fill gc(bpink)
     > .bottom
@@ -360,24 +383,30 @@
       bottom 0
       animation fadeIn 0.5s ease-in-out both
       animation-delay 0.5s
-      > .line
-        width 64px
-        height 4px
-        background-color gc(white1)
       > .nav
         padding 20px 0 0 0
+        > .arrow:hover > svg > path
+          fill gc(white1)
         > .arrow
+          transition background-color 0.2s linear 0s
+          > svg
+            transition fill 0.2s linear 0.05s
           float left
-          width 30px
-          height 30px
-          transform rotate(90deg)
+          width 60px
+          height 60px
+          &:nth-child(2)
+            margin-left 25px
+          border-radius 50%
+          &.up
+            transform rotate(180deg)
+          &.down
+            transform rotate(0deg)
           &.last
             transform rotate(0deg)
+          onoff()
           > svg
             width inherit
             height inherit
-        > .copy
-          margin 5px 0 0 40px
 
 
 @keyframes fadeIn

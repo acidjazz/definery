@@ -12,10 +12,16 @@ copy1b:
   line-height: 22px
   font-weight: '700'
 
+copy1s:
+  font-family: Work Sans
+  font-size: 12px
+  line-height: 22px
+  font-weight: '500'
+
 h1:
   font-family: Work Sans
   font-size: 26px
-  font-weight: '500'
+  font-weight: '300'
   line-height: 32px
 
 h2:
