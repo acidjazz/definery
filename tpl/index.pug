@@ -71,25 +71,18 @@ block content
         .nav.nav_product.contact_cta
           .copy get in touch
 
-  .contact.off
-    .color
-    .close.contact_cta
-      include ../pub/svg/close.svg
+  .section.contact.off
+  .section.services.off
+  .section.work.off
 
-    .inner
-      a.email(href="mailto:hello@definery.io") hello@definery.io
-      .socials
-        a.social.facebook(href=data.meta.social.facebook,target='_blank')
-          include ../pub/svg/social/facebook.svg
-        a.social.instagram(href=data.meta.social.instagram,target='_blank')
-          include ../pub/svg/social/instagram.svg
-        a.social.linkedin(href=data.meta.social.linkedin,target='_blank')
-          include ../pub/svg/social/linkedin.svg
-
-
+  .swiper.right.off
+  .swiper.left.off
 
   .menu.on
-    .option.contact_cta.option_contact.off(data-option='contact') contact us
+    .option.contact_cta.option_contact.off(data-option='contact',data-num=4) contact
+    .option.option_services.off(data-option='services',data-num=3) services
+    .option.option_work.off(data-option='work',data-num=2) work
+    .option.option_about.on(data-option='about',data-num=1) about
 
   .dots
     .dot.dot_definery.on(data-sect="definery",data-num=0): .inner

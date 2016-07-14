@@ -1,3 +1,90 @@
+@keyframes rightToLeft
+  0%
+    left 100vw
+  50%
+    left 0vw
+    right 0vw
+  100%
+    right 100vw
+    left 0vw
+    
+@keyframes leftToRight
+  0%
+    right 100vw
+  50%
+    left 0vw
+    right 0vw
+  100%
+    left 100vw
+    right 0vw
+
+@keyframes inFromTop
+  from
+    opacity 0
+    transform translate(0, -100px) scale(1)
+  to
+    opacity 1
+    transform translate(0, 0) scale(1)
+
+@keyframes inFromBottom
+  from
+    opacity 0
+    transform translate(0, 100px) scale(1)
+  to
+    opacity 1
+    transform translate(0, 0) scale(1)
+
+
+@keyframes outToTop
+  from
+    opacity 1
+    transform translate(0, 0) scale(1)
+  to
+    opacity 0
+    transform translate(0, -100px) scale(1)
+
+
+@keyframes outToBottom
+  from
+    opacity 1
+    transform translate(0, 0) scale(1)
+  to
+    opacity 0
+    transform translate(0, 100px) scale(1)
+
+
+@keyframes cInFromTop
+  from
+    transform translate(0, -350px)
+  to
+    transform translate(0, 0)
+
+
+@keyframes cInFromBottom
+  from
+    transform translate(0, 350px)
+  to
+    transform translate(0, 0)
+
+
+@keyframes cOutToTop
+  from
+    opacity 1
+    transform translate(0, 0)
+  to
+    opacity 0
+    transform translate(0, -350px)
+
+
+@keyframes cOutToBottom
+  from
+    opacity 1
+    transform translate(0, 0)
+  to
+    opacity 0
+    transform translate(0, 350px)
+
+
 
 @keyframes fadeIn
   from
@@ -10,8 +97,6 @@
     opacity 1
   to
     opacity 0
-
-
 
 @keyframes charIn
   from

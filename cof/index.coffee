@@ -14,6 +14,10 @@ Index =
 
   current: 0
 
+  menuNum: 1
+  menuOptions: ['about','work','services','contact']
+  menuSwiping: false
+
   i: ->
 
     Index.handlers()
@@ -26,7 +30,40 @@ Index =
     $('.dots > .dot').on 'click', Index.dotHandler
     $('.menu > .option').on 'click', Index.menuHandler
 
-    $('.contact_cta').on 'click', Index.contact
+  menuHandler: ->
+
+    return true if Index.menuSwiping is true
+
+
+    current = $(this).data 'option'
+    num = $(this).data 'num'
+
+    return true if $(this).hasClass 'on'
+
+    Index.menuSwiping = true
+
+    _.off '.menu > .option'
+    _.on this
+
+    for option in Index.menuOptions
+      $('.swiper').removeClass("swiper_#{option}")
+
+    if num > Index.menuNum then dir = 'right' else dir = 'left'
+    Index.menuNum = num
+
+    $(".swiper.#{dir}").addClass("swiper_#{current}")
+    _.on ".swiper.#{dir}"
+    setTimeout ->
+      _.off ".swiper.#{dir}"
+      Index.menuSwiping = false
+    , 750
+
+    setTimeout ->
+      _.off '.section'
+      if current isnt 'about'
+        _.on ".section.#{current}"
+    , 300
+
 
   contact: ->
     _.swap '.contact', offing: true, offtime: 0.4
