@@ -34,6 +34,7 @@
   right 30px
   z-index 215
   onoff()
+  width 275px
   > .option
     float right
     cursor pointer
@@ -78,6 +79,7 @@
   left 0
   right 0
   z-index 210
+  overflow scroll
   onoff()
   &.contact
     background-color gc(teal2)
@@ -86,6 +88,40 @@
   &.work
     background-color gc(bblue)
 
+.section.services
+  > .inner
+    position absolute
+    top 50%
+    left 50%
+    margin-top -300px
+    margin-left -300px
+    width 600px
+    height 600px
+    color gc(white1)
+    > .top
+      animation cellInY 0.2s linear 0.2s both
+      > .label
+        color gc(pink1)
+        text-transform uppercase
+      > .copy
+        gf(h1)
+        padding 20px 0 40px 0
+        border-bottom 1px solid gc(pink1)
+    > .bottom
+      > .servicelist
+        float left
+        width 33%
+        animation cellInY 0.2s linear 0.3s both
+        &:nth-child(2)
+          animation-delay 0.4s
+        &:nth-child(3)
+          animation-delay 0.5s
+        > .label
+          color gc(pink1)
+          text-transform uppercase
+          padding 40px 0 20px 0
+        > .item
+          padding 2px 10px 2px 0
 .dots
   z-index 200
   position absolute
@@ -400,8 +436,18 @@
       > .title
         //width 210px
         width auto
-  //.background
-    //animation none !important
+  .menu
+    right 50%
+    margin-right -137px
+  .section.services
+    > .inner
+      width 80%
+      height auto
+      margin-left -40%
+      margin-top -60%
+      > .bottom > .servicelist
+        float none
+        width auto
 
 @media all and (min-width: 1px) and (max-width: 1000px) and (orientation: landscape)
   .content
@@ -423,5 +469,4 @@
     top 52%
   .menu
     top 10px
-    right 20px
 

@@ -71,8 +71,52 @@ block content
         .nav.nav_product.contact_cta
           .copy get in touch
 
-  .section.contact.off
+  .section.contact.on
+
+    .inner
+      .top
+        .label contact /
+        .copy How can we help you? Come say hello. We're good peeps. hello@definery.io
+      .bottom
+        .visit
+          .label visit /
+          .icon
+          .address
+            .copy 1740 telegrpah ave.
+            .copy oakland, ca 94612
+            .copy view on google maps
+
   .section.services.off
+    .inner
+      .top 
+        .label services /
+        .copy We are a creative studio focus on digital product creation and innovation.
+      .bottom
+        .servicelist
+          .label strategy /
+          .item User Research
+          .item Product Vision
+          .item Experience Strategy
+          .item Experience Mapping
+          .item Concept Validation
+
+        .servicelist
+          .label design /
+          .item User Experience Design
+          .item Interactive Design
+          .item Solution Architecture
+          .item Process and Service Design
+          .item Visual Identity
+          .item User Interface Systems
+          .item Motion and Interaction
+
+        .servicelist
+          .label execution /
+          .item Rapid Proototyping
+          .item Working Proofs of Concept
+          .item Pilot Teams
+          .item Consulting
+
   .section.work.off
 
   .swiper.right.off
@@ -89,6 +133,7 @@ block content
     .dot.dot_iterate.off(data-sect="iterate",data-num=1): .inner
     .dot.dot_navigate.off(data-sect="navigate",data-num=2): .inner
     .dot.dot_product.off(data-sect="product",data-num=3): .inner
+
   script(type='text/javascript').
     Loader.load('/jst/detect.js', 'Detect', function() {
       Loader.load('/jst/index.js', 'Index');
