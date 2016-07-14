@@ -38,7 +38,9 @@ Index =
     current = $(this).data 'option'
     num = $(this).data 'num'
 
-    return true if $(this).hasClass 'on'
+    if $(this).hasClass 'on'
+      Index.menuSwiping = false
+      return true
 
     _.off '.menu > .option'
     _.on this
