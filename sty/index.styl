@@ -88,7 +88,7 @@
   &.work
     background-color gc(bblue)
 
-.section.services
+.section
   > .inner
     position absolute
     top 50%
@@ -98,6 +98,36 @@
     width 600px
     height 600px
     color gc(white1)
+    > .top
+      animation cellInY 0.2s linear 0.2s both
+      > .label
+        text-transform uppercase
+      > .copy
+        gf(h1)
+        padding 20px 0 40px 0
+    > .bottom
+      > div
+        > .label
+          text-transform uppercase
+
+.section.contact
+  > .inner
+    > .top
+      > .label
+        color gc(blue2)
+      > .copy
+        border-bottom 1px solid gc(blue2)
+    > .bottom
+      > .visit
+        float left
+        width 50%
+        animation cellInY 0.2s linear 0.3s both
+        > .label
+          padding 40px 0 20px 0
+          color gc(blue2)
+
+.section.services
+  > .inner
     > .top
       animation cellInY 0.2s linear 0.2s both
       > .label
