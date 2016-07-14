@@ -33,14 +33,12 @@ Index =
   menuHandler: ->
 
     return true if Index.menuSwiping is true
-
+    Index.menuSwiping = true
 
     current = $(this).data 'option'
     num = $(this).data 'num'
 
     return true if $(this).hasClass 'on'
-
-    Index.menuSwiping = true
 
     _.off '.menu > .option'
     _.on this
