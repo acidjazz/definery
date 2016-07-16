@@ -108,6 +108,13 @@ Index =
 
     return true if Index.paused
 
+    if $('.menu > .option.contact').hasClass('on')
+      return true
+    if $('.menu > .option.services').hasClass('on')
+      return true
+    if $('.menu > .option.work').hasClass('on')
+      return true
+
     previous = Index.nav[Index.current]
 
     if direction is 'down' or direction is 'right'
@@ -138,7 +145,6 @@ Index =
     return true if previous is undefined
 
     if current isnt 'definery' then _.on '.arrow.up' else _.off '.arrow.up'
-
 
     # i will chestbump my monitor if this works
     setTimeout ->
