@@ -106,14 +106,11 @@ Index =
 
   navigate: (direction) ->
 
-    return true if Index.paused
+    return true if $('.menu > .option.contact').hasClass('on')
+    return true if $('.menu > .option.services').hasClass('on')
+    return true if $('.menu > .option.work').hasClass('on')
 
-    if $('.menu > .option.contact').hasClass('on')
-      return true
-    if $('.menu > .option.services').hasClass('on')
-      return true
-    if $('.menu > .option.work').hasClass('on')
-      return true
+    return true if Index.paused
 
     previous = Index.nav[Index.current]
 
