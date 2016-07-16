@@ -106,9 +106,9 @@ Index =
 
   navigate: (direction) ->
 
-    return true if $('.menu > .option.contact').hasClass('on')
-    return true if $('.menu > .option.services').hasClass('on')
-    return true if $('.menu > .option.work').hasClass('on')
+    return true if $('.menu > .option.option_contact').hasClass('on')
+    return true if $('.menu > .option.option_services').hasClass('on')
+    return true if $('.menu > .option.option_work').hasClass('on')
 
     return true if Index.paused
 
