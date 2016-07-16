@@ -30,6 +30,9 @@ Index =
     $('.dots > .dot').on 'click', Index.dotHandler
     $('.menu > .option').on 'click', Index.menuHandler
 
+    window.onresize = ->
+      document.location.reload true
+
   menuHandler: ->
 
     return true if Index.menuSwiping is true
