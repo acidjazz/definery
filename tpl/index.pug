@@ -76,15 +76,25 @@ block content
     .inner
       .top
         .label contact /
-        .copy How can we help you? Come say hello. We're good peeps. hello@definery.io
+        .copy How can we help you? Come say hello. We're good peeps. <a href="mailto:hello@definery.io">hello@definery.io</a>
       .bottom
         .visit
           .label visit /
-          .icon
-          .address
+          a.icon(target='_new',href=data.meta.address)
+            include ../pub/svg/pin.svg
+          a.address(target='_new',href=data.meta.address)
             .copy 1740 telegrpah ave.
             .copy oakland, ca 94612
-            .copy view on google maps
+        .social
+          .label social /
+          a.icon(target='_new',href=data.meta.social.facebook)
+            include ../pub/svg/social/facebook.svg
+          a.icon(target='_new',href=data.meta.social.instagram)
+            include ../pub/svg/social/instagram.svg
+          a.icon(target='_new',href=data.meta.social.linkedin)
+            include ../pub/svg/social/linkedin.svg
+
+
 
   .section.services.off
     .inner
@@ -117,8 +127,18 @@ block content
           .item Pilot Teams
           .item Consulting
 
-  .section.work.off
-
+  .section.work.on
+    .inner
+      .top 
+        .label work /
+        .copy We may be a brand new company but we are no strangers to the industry
+        .subcopy Our team has a history working with companies and startups of all shapes and sizes
+      .bottom
+        .companys
+          each company in data.company
+            .company
+              img(src='/img/company/' + company + '.png')
+ 
   .swiper.right.off
   .swiper.left.off
 

@@ -82,7 +82,7 @@
   overflow scroll
   onoff()
   &.contact
-    background-color gc(teal2)
+    background-color gc(bgreen)
   &.services
     background-color gc(bpink)
   &.work
@@ -100,43 +100,91 @@
     color gc(white1)
     > .top
       animation cellInY 0.2s linear 0.2s both
+      padding 0 0 40px 0
       > .label
         text-transform uppercase
       > .copy
         gf(h1)
-        padding 20px 0 40px 0
+        padding 20px 0 20px 0
     > .bottom
       > div
         > .label
           text-transform uppercase
 
+.section.work
+  > .inner
+    > .top
+      border-bottom 1px solid gc(teal1)
+      > .label
+        color gc(teal1)
+    > .bottom
+      > .companys
+        > .company
+          margin 10px 0
+          float left
+          width 25%
+          height auto
+          animation cellInY 0.2s linear 0.3s both
+          for i in 1..8
+            &:nth-child({i})
+              animation-delay unit((0.1*i) + 0.3, 's')
+
+          > img
+            width 100%
+ 
+
 .section.contact
   > .inner
     > .top
+      border-bottom 1px solid gc(teal1)
+      a
+        color gc(teal1)
+        text-decoration none
       > .label
-        color gc(blue2)
-      > .copy
-        border-bottom 1px solid gc(blue2)
+        color gc(teal1)
     > .bottom
       > .visit
+        animation cellInY 0.2s linear 0.3s both
+      > .social
+        animation cellInY 0.2s linear 0.4s both
+      > .visit, > .social
         float left
         width 50%
-        animation cellInY 0.2s linear 0.3s both
         > .label
           padding 40px 0 20px 0
-          color gc(blue2)
+          color gc(teal1)
+        > .icon
+          float left
+          width 25px
+          height 25px
+          padding 20px
+          border 2px solid gc(teal1)
+          border-radius 50%
+          margin 0 20px 0 0
+          transition background-color 0.2s linear 0s
+          &:hover
+            background-color gc(teal1)
+            > svg > path, > svg > circle
+              fill gc(green1)
+              transition fill 0.2s linear 0.1s
+          > svg
+            width inherit
+            height inherit
+            > path, > circle
+              fill gc(teal1)
+        > .address
+          float left
+          margin 10px 0 0 0
+          color gc(white1)
+          text-decoration none
 
 .section.services
   > .inner
     > .top
       animation cellInY 0.2s linear 0.2s both
+      border-bottom 1px solid gc(pink1)
       > .label
         color gc(pink1)
-        text-transform uppercase
-      > .copy
-        gf(h1)
-        padding 20px 0 40px 0
-        border-bottom 1px solid gc(pink1)
     > .bottom
       > .servicelist
         float left
@@ -467,9 +515,10 @@
         //width 210px
         width auto
   .menu
+    top 15px
     right 50%
     margin-right -137px
-  .section.services
+  .section
     > .inner
       width 80%
       height auto
@@ -477,7 +526,15 @@
       margin-top -60%
       > .bottom > .servicelist
         float none
-        width auto
+        width auto !important
+      > .bottom > .companys > .company
+        width 50% !important
+      > .bottom > .visit, > .bottom > .social
+        float none !important
+        width auto !important
+        display block !important
+        clear both
+
 
 @media all and (min-width: 1px) and (max-width: 1000px) and (orientation: landscape)
   .content
