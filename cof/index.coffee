@@ -67,10 +67,6 @@ Index =
         _.on ".section.#{current}"
     , 300
 
-
-  contact: ->
-    _.swap '.contact', offing: true, offtime: 0.4
-
   navHandler: ->
 
     return true if Index.paused
