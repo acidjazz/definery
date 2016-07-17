@@ -29,12 +29,15 @@ Index =
     $('.nav').on 'click', Index.navHandler
     $('.dots > .dot').on 'click', Index.dotHandler
     $('.menu > .option').on 'click', Index.menuHandler
+    $('.contact_cta').on 'click', Index.contact
     $('.blend-multiply').on 'touchmove', ->
       event.preventDefault()
 
     window.onresize = ->
       document.location.reload true
 
+  contact: ->
+    $('.menu > .option.option_contact').trigger 'click'
   menuHandler: ->
 
     return true if Index.menuSwiping is true
