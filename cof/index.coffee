@@ -30,7 +30,7 @@ Index =
     $('.dots > .dot').on 'click', Index.dotHandler
     $('.menu > .option').on 'click', Index.menuHandler
     $('.prod_contact_cta').on 'click', Index.contact
-    $('.blend-multiply').on 'touchmove', ->
+    $('.blend-multiply, .content').on 'touchmove', ->
       event.preventDefault()
 
     window.onresize = ->
