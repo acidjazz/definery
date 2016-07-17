@@ -29,6 +29,8 @@ Index =
     $('.nav').on 'click', Index.navHandler
     $('.dots > .dot').on 'click', Index.dotHandler
     $('.menu > .option').on 'click', Index.menuHandler
+    $('.blend-multiply').on 'touchmove', ->
+      event.preventDefault()
 
     window.onresize = ->
       document.location.reload true
