@@ -109,12 +109,12 @@
     color gc(white1)
     > .top
       animation cellInY 0.2s linear 0.2s both
-      padding 0 0 40px 0
+      padding 0 0 20px 0
       > .label
         text-transform uppercase
       > .copy
         gf(h1)
-        padding 20px 0 20px 0
+        padding 20px 0 10px 0
     > .bottom
       padding 0 0 50px 0
       clear both
@@ -134,7 +134,6 @@
     > .bottom
       > .companys
         > .company
-          margin 10px 0
           float left
           width 25%
           height auto
@@ -544,10 +543,13 @@
       margin-left -40%
       margin-top -60%
       > .bottom > .servicelist
-        float none !important
-        width auto !important
+        gf(copy1s)
+        > .label
+          padding 10px 0 !important
+        > .item
+          padding 1px !important
       > .bottom > .companys > .company
-        width 50% !important
+        width 25% !important
       > .bottom > .visit, > .bottom > .social
         float none !important
         width auto !important
@@ -571,6 +573,20 @@
         margin-bottom 25px
   .svg
     margin-top -130px
+  .section
+    > .inner
+      width 80%
+      height auto
+      margin-left -40%
+      margin-top -20%
+      > .bottom > .visit, > .bottom > .social
+        float left !important
+        width 50% !important
+        clear none !important
+        > .label
+          padding 20px 0 !important
+
+
 
 @media all and (min-width: 1px) and (max-width: 325px)
   .svg
