@@ -89,6 +89,15 @@
     background-color gc(bblue)
 
 .section
+  > .logo
+    position absolute
+    width 30px
+    height 30px
+    top 30px
+    left 30px
+    > svg
+      width inherit
+      height inherit
   > .inner
     position absolute
     top 50%
@@ -114,6 +123,9 @@
           text-transform uppercase
 
 .section.work
+  > .logo > svg > polygon
+    fill gc(teal1)
+    
   > .inner
     > .top
       border-bottom 1px solid gc(teal1)
@@ -135,6 +147,8 @@
             width 100%
 
 .section.contact
+  > .logo > svg > polygon
+    fill gc(teal1)
   > .inner
     > .top
       border-bottom 1px solid gc(teal1)
@@ -180,6 +194,8 @@
           text-decoration none
 
 .section.services
+  > .logo > svg > polygon
+    fill gc(pink1)
   > .inner
     > .top
       animation cellInY 0.2s linear 0.2s both

@@ -117,7 +117,7 @@ gulp.task('sync', function() {
       scroll: false
     },
     scrollProportionally: false,
-    scrollRestoreTechnique: 'cookie'
+    //scrollRestoreTechnique: 'cookie'
   });
 
   gulp.watch('dat/**/*', ['objectus','stylus','pug']);

@@ -29,7 +29,7 @@ Index =
     $('.nav').on 'click', Index.navHandler
     $('.dots > .dot').on 'click', Index.dotHandler
     $('.menu > .option').on 'click', Index.menuHandler
-    $('.contact_cta').on 'click', Index.contact
+    $('.prod_contact_cta').on 'click', Index.contact
     $('.blend-multiply').on 'touchmove', ->
       event.preventDefault()
 
@@ -38,8 +38,8 @@ Index =
 
   contact: ->
     $('.menu > .option.option_contact').trigger 'click'
-  menuHandler: ->
 
+  menuHandler: ->
     return true if Index.menuSwiping is true
     Index.menuSwiping = true
 
