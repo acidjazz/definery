@@ -33,9 +33,6 @@ Index =
     $(document).on 'touchmove', ->
       event.preventDefault()
 
-    window.onresize = ->
-      document.location.reload true
-
   contact: ->
     $('.menu > .option.option_contact').trigger 'click'
 

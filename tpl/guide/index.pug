@@ -6,12 +6,12 @@ block content
 
     .sections
 
-      .section.colors
+      .gsection.gcolors
         .title Colors
         each color, name in data.color
           .color(class='color_'+name) #{name} (#{color})
 
-      .section.fonts
+      .gsection.fonts
         .title Fonts
         each atts, name in data.font
           .font(class="font_#{name}") #{name} #{atts['font-family']} #{atts['font-size']}
