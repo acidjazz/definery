@@ -38,7 +38,7 @@ Index =
     $('.container'). on 'mousedown', ->
       console.log 'mousedown'
 
-    $(document).swipe
+    $('.content').swipe
       swipe: (event, direction, distance, duration, fingerCount) ->
         Index.navigate direction
         return
