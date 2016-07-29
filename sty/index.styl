@@ -90,6 +90,7 @@
 
 .section
   > .logo
+    cursor pointer
     position absolute
     width 30px
     height 30px
@@ -543,12 +544,14 @@
       margin-top -60%
       > .bottom > .servicelist
         gf(copy1s)
+        float none !important
+        width auto !important
         > .label
           padding 10px 0 !important
         > .item
           padding 1px !important
       > .bottom > .companys > .company
-        width 25% !important
+        width 50% !important
       > .bottom > .visit, > .bottom > .social
         float none !important
         width auto !important
@@ -556,8 +559,6 @@
         clear both
       > .bottom > .social > .icon
         margin 0 0 0 10px !important
-
-
 
 @media all and (min-width: 1px) and (max-width: 1000px) and (orientation: landscape)
   .content

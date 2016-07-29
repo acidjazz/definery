@@ -29,16 +29,16 @@ Index =
     $('.nav').on 'click', Index.navHandler
     $('.dots > .dot').on 'click', Index.dotHandler
     $('.menu > .option').on 'click', Index.menuHandler
+    $('.section > .logo').on 'click', ->
+      $('.menu > .option.option_about').trigger 'click'
+
+
     $('.prod_contact_cta').on 'click', Index.contact
 
     #$(document).on 'touchmove', ->
     #  event.preventDefault()
-    #
-    #
-    $('.container'). on 'mousedown', ->
-      console.log 'mousedown'
-
-    $('.content').swipe
+    
+    $('.content > .inner > .logo,.content > .inner > .pronounce,.content > .inner > .define').swipe
       swipe: (event, direction, distance, duration, fingerCount) ->
         Index.navigate direction
         return
@@ -55,12 +55,12 @@ Index =
     current = $(this).data 'option'
     num = $(this).data 'num'
 
-    if $(this).hasClass 'on'
+    if $(".option_#{current}").hasClass 'on'
       Index.menuSwiping = false
       return true
 
     _.off '.menu > .option'
-    _.on this
+    _.on ".option_#{current}"
 
     for option in Index.menuOptions
       $('.swiper').removeClass("swiper_#{option}")
