@@ -40,10 +40,13 @@ Index =
     Detect.handler Index.navigate
     $('.content > .inner > .tapspace').swipe
       swipe: (event, direction, distance, duration, fingerCount) ->
-        direction  = 'up' if direction is 'down'
+        ###
         direction  = 'down' if direction is 'up'
+        direction  = 'up' if direction is 'down'
         direction  = 'left' if direction is 'right'
         direction  = 'right' if direction is 'left'
+        ###
+        $('.debug').append('1: swipe: ' + direction + '<br /> ')
         Index.navigate direction
         return
       tap: (event, target) ->
@@ -135,16 +138,15 @@ Index =
 
     previous = Index.nav[Index.current]
 
-    $('.debug').append('swipe: ' + direction + '<br /> ')
 
-    if direction is 'down' or direction is 'right'
+    if direction is 'up' or direction is 'left'
       if (Index.current == (Index.nav.length-1))
         return true
         #Index.current = 0
       else
         Index.current++
 
-    if direction is 'up' or direction is 'left'
+    if direction is 'down' or direction is 'right'
       if (Index.current == 0)
         return true
         #Index.current = Index.nav.length-1
@@ -182,7 +184,7 @@ Index =
     $('.border').addClass current
     $('.bgcolor').addClass current
 
-    if direction is 'down' or direction is 'right'
+    if direction is 'up' or direction is 'left'
 
       _.on ".background.#{current}"
       $(".background.#{current}").addClass 'inFromBottom'
@@ -207,7 +209,7 @@ Index =
 
       , 1000
 
-    if direction is 'up' or direction is 'left'
+    if direction is 'down' or direction is 'right'
 
       _.on ".background.#{current}"
       $(".background.#{current}").addClass 'inFromTop'
