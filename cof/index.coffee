@@ -127,14 +127,14 @@ Index =
 
     previous = Index.nav[Index.current]
 
-    if direction is 'down' or direction is 'left'
+    if direction is 'up' or direction is 'left'
       if (Index.current == (Index.nav.length-1))
         return true
         #Index.current = 0
       else
         Index.current++
 
-    if direction is 'up' or direction is 'right'
+    if direction is 'down' or direction is 'right'
       if (Index.current == 0)
         return true
         #Index.current = Index.nav.length-1
