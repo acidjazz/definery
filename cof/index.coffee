@@ -24,7 +24,6 @@ Index =
 
   handlers: ->
 
-    #Detect.handler Index.navigate
 
     $('.nav').on 'click', Index.navHandler
     $('.dots > .dot').on 'click', Index.dotHandler
@@ -38,6 +37,7 @@ Index =
     $(document).on 'touchmove', ->
       event.preventDefault()
 
+    Detect.handler Index.navigate
     $('.content > .inner > .tapspace').swipe
       swipe: (event, direction, distance, duration, fingerCount) ->
         Index.navigate direction
@@ -131,14 +131,14 @@ Index =
 
     previous = Index.nav[Index.current]
 
-    if direction is 'up' or direction is 'left'
+    if direction is 'down' or direction is 'right'
       if (Index.current == (Index.nav.length-1))
         return true
         #Index.current = 0
       else
         Index.current++
 
-    if direction is 'down' or direction is 'right'
+    if direction is 'up' or direction is 'left'
       if (Index.current == 0)
         return true
         #Index.current = Index.nav.length-1
