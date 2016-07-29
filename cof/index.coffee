@@ -35,8 +35,9 @@ Index =
 
     $('.prod_contact_cta').on 'click', Index.contact
 
-    #$(document).on 'touchmove', ->
-    #  event.preventDefault()
+    $(document).on 'touchmove', ->
+      event.preventDefault()
+
     $('.content > .inner > .tapspace').swipe
       swipe: (event, direction, distance, duration, fingerCount) ->
         Index.navigate direction
