@@ -22,6 +22,7 @@
   ],
   "dependencies": {
     "jquery": "~2.2.3",
-    "gsap": "greensock#^1.18.5"
+    "gsap": "greensock#^1.18.5",
+    "jquery-touchswipe": "^1.6.18"
   }
 }

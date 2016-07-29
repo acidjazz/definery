@@ -24,14 +24,26 @@ Index =
 
   handlers: ->
 
-    Detect.handler Index.navigate
+    #Detect.handler Index.navigate
 
     $('.nav').on 'click', Index.navHandler
     $('.dots > .dot').on 'click', Index.dotHandler
     $('.menu > .option').on 'click', Index.menuHandler
     $('.prod_contact_cta').on 'click', Index.contact
-    $(document).on 'touchmove', ->
-      event.preventDefault()
+
+    #$(document).on 'touchmove', ->
+    #  event.preventDefault()
+    #
+    #
+    $('.container'). on 'mousedown', ->
+      console.log 'mousedown'
+
+    $(document).swipe
+      swipe: (event, direction, distance, duration, fingerCount) ->
+        Index.navigate direction
+        return
+      threshold: 0
+
 
   contact: ->
     $('.menu > .option.option_contact').trigger 'click'
@@ -115,14 +127,14 @@ Index =
 
     previous = Index.nav[Index.current]
 
-    if direction is 'down' or direction is 'right'
+    if direction is 'up' or direction is 'left'
       if (Index.current == (Index.nav.length-1))
         return true
         #Index.current = 0
       else
         Index.current++
 
-    if direction is 'up' or direction is 'left'
+    if direction is 'down' or direction is 'right'
       if (Index.current == 0)
         return true
         #Index.current = Index.nav.length-1
