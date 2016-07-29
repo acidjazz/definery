@@ -40,6 +40,10 @@ Index =
     Detect.handler Index.navigate
     $('.content > .inner > .tapspace').swipe
       swipe: (event, direction, distance, duration, fingerCount) ->
+        direction  = 'up' if direction is 'down'
+        direction  = 'down' if direction is 'up'
+        direction  = 'left' if direction is 'right'
+        direction  = 'right' if direction is 'left'
         Index.navigate direction
         return
       tap: (event, target) ->
@@ -130,6 +134,8 @@ Index =
     return true if Index.paused
 
     previous = Index.nav[Index.current]
+
+    $('.debug').append('swipe: ' + direction + '<br /> ')
 
     if direction is 'down' or direction is 'right'
       if (Index.current == (Index.nav.length-1))

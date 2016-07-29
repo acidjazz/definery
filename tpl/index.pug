@@ -2,6 +2,7 @@ extends inc/layout
 
 block content
 
+
   .colors
     .cyan.definery
       .background.definery.on
@@ -160,6 +161,8 @@ block content
     .dot.dot_iterate.off(data-sect="iterate",data-num=1): .inner
     .dot.dot_navigate.off(data-sect="navigate",data-num=2): .inner
     .dot.dot_product.off(data-sect="product",data-num=3): .inner
+
+  .debug 
 
   script(type='text/javascript').
     Loader.load('/jst/detect.js', 'Detect', function() {
