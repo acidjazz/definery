@@ -38,9 +38,11 @@ Index =
     #$(document).on 'touchmove', ->
     #  event.preventDefault()
     
-    $('.content > .inner > .logo,.content > .inner > .pronounce,.content > .inner > .define').swipe
+    $('.content > .inner').swipe
       swipe: (event, direction, distance, duration, fingerCount) ->
         Index.navigate direction
+      tap: (event, target) ->
+        console.log event, target
         return
       threshold: 0
 
