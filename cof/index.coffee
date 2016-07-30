@@ -46,7 +46,7 @@ Index =
         direction  = 'left' if direction is 'right'
         direction  = 'right' if direction is 'left'
         ###
-        returnt rue if direction is null
+        return true if direction is null
         $('.debug').append('1: swipe: ' + direction + '<br /> ')
         Index.navigate direction
         return
