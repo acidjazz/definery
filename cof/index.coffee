@@ -34,8 +34,8 @@ Index =
 
     $('.prod_contact_cta').on 'click', Index.contact
 
-    $(document).on 'touchmove', ->
-      event.preventDefault()
+    #$(document).on 'touchmove', ->
+    #  event.preventDefault()
 
     Detect.handler Index.navigate
     $('.content > .inner > .tapspace').swipe
@@ -46,6 +46,7 @@ Index =
         direction  = 'left' if direction is 'right'
         direction  = 'right' if direction is 'left'
         ###
+        returnt rue if direction is null
         $('.debug').append('1: swipe: ' + direction + '<br /> ')
         Index.navigate direction
         return
