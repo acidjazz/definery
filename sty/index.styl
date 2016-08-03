@@ -86,12 +86,18 @@
   z-index 210
   overflow scroll
   onoff()
-  &.contact, &.contact > .topbar
+  &.contact
     background-color gc(bgreen)
-  &.services, &.services > .topbar
+  &.contact > .topbar
+    background linear-gradient(bottom, transparent, 45% gc(bgreen))
+  &.services
     background-color gc(bpink)
-  &.work, &.work > .topbar
+  &.services > .topbar
+    background linear-gradient(bottom, transparent, 45% gc(bpink))
+  &.work
     background-color gc(bblue)
+  &.work > .topbar
+    background linear-gradient(bottom, transparent, 45% gc(bblue))
 
 .section
   > .logo
@@ -109,7 +115,7 @@
     top 0
     left 0
     right 0
-    height 60px
+    height 80px
     z-index 212
     display none
   > .inner
@@ -597,7 +603,7 @@
         display block !important
         clear both
       > .bottom > .social > .icon
-        margin 0 0 0 10px !important
+        margin 0 0 20px 20px !important
 
 @media all and (min-width: 1px) and (max-width: 1000px) and (orientation: landscape)
   .content
@@ -620,6 +626,8 @@
   .svg
     margin-top -130px
   .section
+    > .topbar
+      height 60px !important
     > .inner
       width 80%
       height auto
