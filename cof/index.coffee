@@ -12,6 +12,12 @@ Index =
     'navigate': data.color.green1
     'product': data.color.pink1
 
+  menucolors:
+    'definery': data.color.teal1
+    'iterate': data.color.blue1
+    'navigate': data.color.green1
+    'product': data.color.pink1
+
   current: 0
 
   menuNum: 1
@@ -23,7 +29,6 @@ Index =
     Index.handlers()
 
   handlers: ->
-
 
     $('.nav').on 'click', Index.navHandler
     $('.dots > .dot').on 'click', Index.dotHandler
