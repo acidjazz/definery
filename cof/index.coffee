@@ -102,7 +102,8 @@ Index =
     current = t.data 'to'
     direction = t.data 'dir'
 
-    Index.transit(previous, current, direction)
+    #Index.transit(previous, current, direction)
+    Index.navigate direction
 
     Index.paused = true
     setTimeout ->
@@ -138,7 +139,6 @@ Index =
     return true if Index.paused
 
     previous = Index.nav[Index.current]
-
 
     if direction is 'up' or direction is 'left'
       if (Index.current == (Index.nav.length-1))
