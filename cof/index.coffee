@@ -13,10 +13,10 @@ Index =
     'product': data.color.pink1
 
   menucolors:
-    'definery': data.color.teal1
-    'iterate': data.color.blue1
-    'navigate': data.color.green1
-    'product': data.color.pink1
+    'about': data.color.teal1
+    'work': data.color.bblue
+    'services': data.color.bpink
+    'contact': data.color.bgreen
 
   current: 0
 
