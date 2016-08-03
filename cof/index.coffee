@@ -197,18 +197,18 @@ Index =
 
       setTimeout ->
 
+        for sect in Index.nav
+          if sect isnt current
+            _.off ".background.#{sect}"
+            _.off ".content.#{sect}"
+
         $(".background.#{current}").removeClass 'inFromBottom'
         $(".background.#{previous}").removeClass 'outToTop'
 
         $(".content.#{current}").removeClass 'cInFromBottom'
         $(".content.#{previous}").removeClass 'cOutToTop'
 
-        for sect in Index.nav
-          if sect isnt current
-            _.off ".background.#{sect}"
-            _.off ".content.#{sect}"
-
-      , 1000
+      , 800
 
     if direction is 'down' or direction is 'right'
 
@@ -222,18 +222,18 @@ Index =
 
       setTimeout ->
 
+        for sect in Index.nav
+          if sect isnt current
+            _.off ".background.#{sect}"
+            _.off ".content.#{sect}"
+
         $(".background.#{previous}").removeClass 'outToBottom'
         $(".background.#{current}").removeClass 'inFromTop'
 
         $(".content.#{previous}").removeClass 'cOutToBottom'
         $(".content.#{current}").removeClass 'cInFromTop'
 
-        for sect in Index.nav
-          if sect isnt current
-            _.off ".background.#{sect}"
-            _.off ".content.#{sect}"
-
-      , 1000
+      , 800
 
     _.off '.dots > .dot'
     _.on ".dots > .dot.dot_#{current}"
