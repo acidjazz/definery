@@ -136,7 +136,7 @@ Index =
     current = $(this).data 'sect'
     cnum = $(this).data 'num'
 
-    if cnum > pnum then direction = 'down' else direction = 'up'
+    if cnum > pnum then direction = 'up' else direction = 'down'
 
     Index.transit previous, current, direction
 
