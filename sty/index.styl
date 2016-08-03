@@ -86,11 +86,11 @@
   z-index 210
   overflow scroll
   onoff()
-  &.contact
+  &.contact, &.contact > .topbar
     background-color gc(bgreen)
-  &.services
+  &.services, &.services > .topbar
     background-color gc(bpink)
-  &.work
+  &.work, &.work > .topbar
     background-color gc(bblue)
 
 .section
@@ -104,6 +104,14 @@
     > svg
       width inherit
       height inherit
+  > .topbar
+    position fixed
+    top 0
+    left 0
+    right 0
+    height 60px
+    z-index 212
+    display none
   > .inner
     position absolute
     top 50%
@@ -564,6 +572,8 @@
   .section
     > .logo
       display none !important
+    > .topbar
+      display block !important
     > .inner
       width 80%
       height auto
