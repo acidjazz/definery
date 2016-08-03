@@ -44,9 +44,9 @@
     float right
     cursor pointer
     color gc(white1)
-    padding 5px
+    padding 8px 0 2px 0
     transition all 0.2s linear
-    margin 0 10px 0 0
+    margin 0px 20px 0px 0px
     user-select none
     -webkit-tap-highlight-color transparent
     &.on
@@ -131,17 +131,19 @@
 
 .section.work
   > .logo > svg > polygon
-    fill gc(teal1)
+    fill gc(blue3)
   > .inner
     > .top
-      border-bottom 1px solid gc(teal1)
+      border-bottom 1px solid gc(blue3)
       > .label
-        color gc(teal1)
+        color gc(blue3)
+      > .subcopy
+        padding 0 0 20px 0
     > .bottom
       > .companys
         > .company
           float left
-          width 25%
+          width 33%
           height auto
           animation cellInY 0.2s linear 0.3s both
           for i in 1..8
@@ -160,6 +162,9 @@
       a
         color gc(teal1)
         text-decoration none
+        transition color 0.1s linear 0s
+        &:hover
+          color gc(white1)
       > .label
         color gc(teal1)
     > .bottom
@@ -220,6 +225,7 @@
           color gc(pink1)
           text-transform uppercase
           padding 40px 0 20px 0
+          gf(copy1s)
         > .item
           padding 2px 10px 2px 0
 .dots
@@ -436,6 +442,8 @@
       position absolute
       bottom 0
       left 0
+      &.bcta
+        bottom -20px
     > .bottom > .nav
       cursor pointer
       user-select none
@@ -538,9 +546,9 @@
     right 10%
     margin-top -240px
   .content
-    width 70vw
+    width 80vw
     height 400px
-    left 15vw
+    left 10vw
     margin-left 0
     margin-top -200px
     > .inner
@@ -566,6 +574,8 @@
           padding 10px 0 !important
         > .item
           padding 1px !important
+      > .bottom
+        padding-bottom 30px
       > .bottom > .companys > .company
         width 50% !important
       > .bottom > .visit, > .bottom > .social
