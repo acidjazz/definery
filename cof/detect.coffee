@@ -7,11 +7,7 @@ Detect =
 
   i: ->
 
-    console.log 'Detect.i()'
-
   exec: (callback, direction) ->
-    #$('.debug').append('2: swipe: ' + direction + '<br /> ')
-    console.log direction
     callback direction
 
   handler: (callback) ->
