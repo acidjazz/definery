@@ -2,7 +2,9 @@ Index =
 
   nav: ['definery','iterate', 'navigate', 'product']
   timeout: 1000
+  transitTimeout: 1000
   paused: false
+  currentSlide: false
 
   tl: false
 
@@ -27,6 +29,10 @@ Index =
   i: ->
 
     Index.handlers()
+
+    if navigator.userAgent.toLowerCase().indexOf('android') > -1
+      Index.transitTimeout = 800
+
 
   handlers: ->
 
@@ -78,6 +84,11 @@ Index =
 
     _.off '.menu > .option'
     _.on ".option_#{current}"
+
+    if current is 'about'
+      Index.meta Index.colors[Index.currentSlide], 200
+    else
+      Index.meta Index.menucolors[current], 200
 
     for option in Index.menuOptions
       $('.swiper').removeClass("swiper_#{option}")
@@ -148,14 +159,12 @@ Index =
     if direction is 'up' or direction is 'left'
       if (Index.current == (Index.nav.length-1))
         return true
-        #Index.current = 0
       else
         Index.current++
 
     if direction is 'down' or direction is 'right'
       if (Index.current == 0)
         return true
-        #Index.current = Index.nav.length-1
       else
         Index.current--
 
@@ -168,6 +177,12 @@ Index =
       Index.paused = false
     , Index.timeout
 
+  meta: (color, timeout) ->
+    setTimeout ->
+      $('meta[name=theme-color]').remove()
+      $('head').append('<meta name="theme-color" content="' + color + '">')
+    , timeout
+
   transit: (previous, current, direction) ->
 
     return true if previous is undefined
@@ -175,10 +190,8 @@ Index =
     if current isnt 'definery' then _.on '.arrow.up' else _.off '.arrow.up'
 
     # i will chestbump my monitor if this works
-    setTimeout ->
-      $('meta[name=theme-color]').remove()
-      $('head').append('<meta name="theme-color" content="' + Index.colors[current] + '">')
-    , 500
+    Index.currentSlide = current
+    Index.meta Index.colors[current], 500
 
     for sect in Index.nav
       if sect isnt current
@@ -213,7 +226,7 @@ Index =
         $(".content.#{current}").removeClass 'cInFromBottom'
         $(".content.#{previous}").removeClass 'cOutToTop'
 
-      , 800
+      , Index.transitTimeout
 
     if direction is 'down' or direction is 'right'
 
@@ -238,7 +251,7 @@ Index =
         $(".content.#{previous}").removeClass 'cOutToBottom'
         $(".content.#{current}").removeClass 'cInFromTop'
 
-      , 800
+      , Index.transitTimeout
 
     _.off '.dots > .dot'
     _.on ".dots > .dot.dot_#{current}"
