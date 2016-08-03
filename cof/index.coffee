@@ -47,7 +47,7 @@ Index =
         direction  = 'right' if direction is 'left'
         ###
         return true if direction is null
-        $('.debug').append('1: swipe: ' + direction + '<br /> ')
+        #$('.debug').append('1: swipe: ' + direction + '<br /> ')
         Index.navigate direction
         return
       tap: (event, target) ->
