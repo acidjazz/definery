@@ -1,10 +1,10 @@
 
 gf(k)
-  for key, value in data.font[k]
+  for key, value in config.font[k]
     {key} unquote(value)
 
 gc(k)
-  return convert(data.color[k])
+  return convert(config.color[k])
 
 .guide
   padding 20px 0 0 0 
@@ -23,7 +23,7 @@ gc(k)
         padding 10px 20px
         margin 5px
         color gc(white1)
-        for name, color in data.color
+        for name, color in config.color
           &.color_{name}
             background-color: convert(color)
             if dark(convert(color))
@@ -36,6 +36,6 @@ gc(k)
         padding 10px 20px
         overflow-x scroll
         color gc(white1)
-        for name, font in data.font
+        for name, font in config.font
           &.font_{name}
             gf(name)

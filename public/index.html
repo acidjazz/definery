@@ -49,10 +49,10 @@ limitations under the License.
       ga('send', 'pageview');
       
     </script>
-    <script type="text/javascript" src="/jst/lib/vendor.min.js"></script>
-    <script type="text/javascript" src="/jst/main.js"></script>
-    <script type="text/javascript" src="/jst/data.js"></script>
-    <script type="text/javascript" src="/jst/loader.js"></script>
+    <script type="text/javascript" src="/js/lib/vendor.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/config.js"></script>
+    <script type="text/javascript" src="/js/loader.js"></script>
     <meta name="description" content="Definery is a digital product design and innovation company based in the San Francisco Bay Area. We transform great ideas into amazing products that people want, working with our partners to generate, test and define experiences quickly and thoughtfully through rapid design and prototyping.">
     <meta name="keywords" content="Digital product design, User Experience Design, UX Design, iXd, Service Design, Prototyping, Rapid, San Francisco, Bay Area, SF, User Centered Design, Research, Strategy, Concepting, Innovation">
     <script type="application/ld+json">
@@ -91,26 +91,26 @@ limitations under the License.
     <meta name="twitter:image" content="http://definery.io/img/share.jpg">
     <meta name="twitter:image:width" 1200>
     <meta name="twitter:image:height" 630>
-    <link rel="apple-touch-icon" sizes="57x57" href="/ico/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/ico/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/ico/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/ico/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/ico/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/ico/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/ico/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/ico/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/ico/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="/ico/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/ico/favicon-194x194.png" sizes="194x194">
-    <link rel="icon" type="image/png" href="/ico/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="/ico/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="/ico/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/ico/manifest.json">
-    <link rel="mask-icon" href="/ico/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="/ico/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/icons/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/icons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/icons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/icons/manifest.json">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/icons/favicon.ico">
     <meta name="msapplication-TileColor" content="#112b33">
-    <meta name="msapplication-TileImage" content="/ico/mstile-144x144.png">
-    <meta name="msapplication-config" content="/ico/browserconfig.xml">
+    <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
+    <meta name="msapplication-config" content="/icons/browserconfig.xml">
     <meta name="theme-color" content="#55c7c0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -160,8 +160,8 @@ limitations under the License.
         </div>
         <div class="blend-multiply">
           <div class="video" id="video">
-            <video loop muted autoplay poster="/img/poster.jpg">
-              <source src="/vid/fog.mp4">
+            <video loop muted autoplay poster="/images/poster.jpg">
+              <source src="/video/fog.mp4">
             </video>
           </div>
           <div class="blend-screen">
@@ -404,7 +404,7 @@ limitations under the License.
               </div>
               <div class="servicelist">
                 <div class="label">execution /</div>
-                <div class="item">Rapid Proototyping</div>
+                <div class="item">Rapid Prototyping</div>
                 <div class="item">Working Proofs of Concept</div>
                 <div class="item">Pilot Teams</div>
                 <div class="item">Consulting</div>
@@ -430,14 +430,30 @@ limitations under the License.
             </div>
             <div class="bottom">
               <div class="companys">
-                <div class="company"><img src="/img/company/bbva.png"></div>
-                <div class="company"><img src="/img/company/flexscore.png"></div>
-                <div class="company"><img src="/img/company/genentech.png"></div>
-                <div class="company"><img src="/img/company/treat.png"></div>
-                <div class="company"><img src="/img/company/facebook.png"></div>
-                <div class="company"><img src="/img/company/funnyordie.png"></div>
-                <div class="company"><img src="/img/company/likwid.png"></div>
-                <div class="company"><img src="/img/company/perricone.png"></div>
+                <div class="company">
+                  <images src="/images/company/bbva.png"></images>
+                </div>
+                <div class="company">
+                  <images src="/images/company/flexscore.png"></images>
+                </div>
+                <div class="company">
+                  <images src="/images/company/genentech.png"></images>
+                </div>
+                <div class="company">
+                  <images src="/images/company/treat.png"></images>
+                </div>
+                <div class="company">
+                  <images src="/images/company/facebook.png"></images>
+                </div>
+                <div class="company">
+                  <images src="/images/company/funnyordie.png"></images>
+                </div>
+                <div class="company">
+                  <images src="/images/company/likwid.png"></images>
+                </div>
+                <div class="company">
+                  <images src="/images/company/perricone.png"></images>
+                </div>
                 <div class="clear"></div>
               </div>
             </div>
@@ -467,8 +483,8 @@ limitations under the License.
         </div>
         <div class="debug"> </div>
         <script type="text/javascript">
-          Loader.load('/jst/detect.js', 'Detect', function() {
-            Loader.load('/jst/index.js', 'Index');
+          Loader.load('/js/detect.js', 'Detect', function() {
+            Loader.load('/js/index.js', 'Index');
           });
         </script>
       </div>

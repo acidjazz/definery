@@ -1,66 +1,60 @@
 
-var gulp = require('gulp');
-var sync = require('browser-sync').create();
+var gulp         = require('gulp');
+var sync         = require('browser-sync').create();
+var notify       = require('gulp-notify');
+var coffee       = require('gulp-coffee');
+var uglify       = require('gulp-uglify');
+var concat       = require('gulp-concat');
+var stylus       = require('gulp-stylus');
+var pug          = require('gulp-pug');
+var sourcemaps   = require('gulp-sourcemaps');
+var fs           = require('fs');
+var objectus     = require('objectus');
 
-var notify = require('gulp-notify');
+var dirs = {
+  coffee: 'resources/coffee',
+  pug: 'resources/views',
+  stylus: 'resources/stylus',
+};
 
-var coffee = require('gulp-coffee');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
+var objectify = function() {
 
-var stylus = require('gulp-stylus');
-var pug = require('gulp-pug');
-
-var sourcemaps = require('gulp-sourcemaps');
-
-var path = require('path');
-var fs = require('fs');
-
-var objectus = require('objectus');
-
-objectus('dat/', function(error, result) {
-  if (error) {
-    notify(error);
-  }
-  data = result;
-});
-
-gulp.task('objectus', function() {
-  objectus('dat/', function(error, result) {
-
+  objectus('config/', function(error, result) {
     if (error) {
       notify(error);
     }
-
-    data = result;
-
+    config = result;
   });
-  return true;
-});
 
-gulp.task('vendors', function() {
+  return config;
+
+}
+var config = objectify();
+
+gulp.task('objectus', objectify);
+
+gulp.task('vendor', function() {
 
   gulp.src([
+    'node_modules/jquery/dist/jquery.js',
     'bower_components/jquery/dist/jquery.js',
     'bower_components/jquery-touchswipe/jquery.touchSwipe.min.js',
-
     'bower_components/gsap/src/uncompressed/TweenMax.js',
     'bower_components/gsap/src/uncompressed/TweenLite.js',
-    'pub/jst/lib/MorphSVGPlugin.min.js'
+    'public/js/lib/MorphSVGPlugin.min.js'
+
   ])
-  .pipe(sourcemaps.init())
   .pipe(uglify())
   .pipe(concat('vendor.min.js'))
-  .pipe(sourcemaps.write())
-  .pipe(gulp.dest('pub/jst/lib'));
+  .pipe(gulp.dest('public/js/lib'));
 
 });
 
 gulp.task('coffee', function() {
 
-  fs.writeFileSync('pub/jst/data.js', "var data = " + JSON.stringify(data) + ";", 'utf8')
+  fs.writeFileSync('public/js/config.js', "var config = " + JSON.stringify(config) + ";", 'utf8')
 
-  gulp.src('cof/**/*.coffee')
+  gulp.src(dirs.coffee + '/**/*.coffee')
     .pipe(sourcemaps.init())
     .pipe(coffee({bare: true})
       .on('error', notify.onError(function(error) {
@@ -68,49 +62,58 @@ gulp.task('coffee', function() {
       }))
     )
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('pub/jst'))
+    .pipe(gulp.dest('public/js'))
     .pipe(sync.stream());
 });
 
 gulp.task('stylus', function() {
 
-  gulp.src('sty/main.styl')
+  gulp.src(dirs.stylus + '/main.styl')
 
     .pipe(sourcemaps.init())
-    .pipe(stylus({ rawDefine: { data: data } })
+    .pipe(stylus({ rawDefine: { config: config } })
     .on('error', notify.onError(function(error) {
       return {title: "Stylus error: " + error.name, message: error.message, sound: 'Pop' };
     })))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('pub/css'))
+    .pipe(gulp.dest('public/css'))
     .pipe(sync.stream());
 });
 
 
 gulp.task('pug', function() {
 
-  gulp.src('tpl/**/index.pug')
-    .pipe(pug({pretty: true, locals: {data: data}})
+  gulp.src(dirs.pug + '/**/index.pug')
+    .pipe(pug({pretty: true, locals: {config: config}})
       .on('error', notify.onError(function(error) {
-        return {title: "Jade error: " + error.name, message: error.message, sound: 'Pop' };
+        return {title: "Pug error: " + error.name, message: error.message, sound: 'Pop' };
       }))
       .on('error', function(error) {
         console.log(error);
       })
     )
-    .pipe(gulp.dest('pub'))
+    .pipe(gulp.dest('public'))
     .pipe(sync.stream());
 
 });
 
-var imgwatch;
+var watch = function() {
+
+  gulp.watch('config/**/*', ['objectus','pug', 'stylus']);
+  gulp.watch(dirs.coffee + '/**/*.coffee', ['objectus', 'coffee']);
+  gulp.watch(dirs.stylus + '/**/*.styl', ['stylus']);
+  gulp.watch(dirs.pug + '/**/*.pug', ['pug']);
+  gulp.watch('resources/vector/**/*.svg', ['pug']);
+  gulp.watch('public/images/**/*', ['pug']);
+
+};
 
 gulp.task('sync', function() {
   sync.init({
     notify: false,
     open: false,
     server: {
-      baseDir: 'pub/',
+      baseDir: 'public/',
     },
     ghostMode: {
       clicks: false,
@@ -118,24 +121,12 @@ gulp.task('sync', function() {
       scroll: false
     },
     scrollProportionally: false,
-    //scrollRestoreTechnique: 'cookie'
   });
 
-  gulp.watch('dat/**/*', ['objectus','stylus','pug']);
-  gulp.watch('cof/**/*.coffee', ['objectus', 'coffee']);
-  gulp.watch('sty/**/*.styl', ['stylus']);
-  gulp.watch('tpl/**/*.pug', ['pug']);
-  gulp.watch('pub/svg/**/*.svg', ['pug']);
-  gulp.watch('pub/img/**/*', ['pug']);
+  watch();
 
 });
 
+gulp.task('watch', watch);
 
-gulp.task('watch', function() {
-  gulp.watch('dat/**/*', ['objectus','stylus','pug']);
-  gulp.watch('cof/**/*.coffee', ['coffee']);
-  gulp.watch('sty/**/*.styl', ['stylus']);
-  gulp.watch('tpl/**/*.pug', ['pug']);
-});
-
-gulp.task('default', ['objectus','coffee', 'stylus', 'pug', 'vendors']);
+gulp.task('default', ['objectus','coffee', 'stylus', 'pug', 'vendor']);

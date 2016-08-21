@@ -1,4 +1,4 @@
-extends inc/layout
+extends extends/layout
 
 block content
   .colors
@@ -9,14 +9,14 @@ block content
       .background.product.off
     .bgcolor.definery
     .svg.star.all.star_definery.on
-      include ../pub/svg/tween.svg
+      include ../vector/tween.svg
   .blend-multiply
     .video#video
-      video(loop,muted,autoplay,poster="/img/poster.jpg")
-        source(src="/vid/fog.mp4")
+      video(loop,muted,autoplay,poster="/images/poster.jpg")
+        source(src="/video/fog.mp4")
     .blend-screen
       .svg.all.star.star_definery.on
-        include ../pub/svg/tween.svg
+        include ../vector/tween.svg
 
   .border.vert.top.definery
   .border.horiz.left.definery
@@ -28,14 +28,14 @@ block content
       //.top
         .nav.nav_definery.nav_to_product(data-dir="up",data-from="definery",data-to="product") the result
       .logo
-        include ../pub/svg/logo.svg
+        include ../vector/logo.svg
       .pronounce /dəˈfīn(ə)rē/
       .define 1.  a digital product design and innovation company that transforms great ideas into amazing experiences that people want.
       .tapspace
       .bottom
         .nav.nav_definery.nav_to_iterate(data-dir="up",data-from="definery",data-to="iterate")
           .arrow.down
-            include ../pub/svg/arrow.svg
+            include ../vector/arrow.svg
 
   .content.iterate.off
     .inner
@@ -47,7 +47,7 @@ block content
       .bottom
         .nav.nav_iterate.nav_to_navigate(data-dir="up",data-from="iterate",data-to="navigate")
           .arrow.down
-            include ../pub/svg/arrow.svg
+            include ../vector/arrow.svg
 
           //.copy how we collaborate
 
@@ -61,7 +61,7 @@ block content
       .bottom
         .nav.nav_navigate.nav_to_product(data-dir="up",data-from="navigate",data-to="product")
           .arrow.down
-            include ../pub/svg/arrow.svg
+            include ../vector/arrow.svg
 
   .content.product.off
     .inner
@@ -76,7 +76,7 @@ block content
 
   .section.contact.off
 
-    .logo: include ../pub/svg/star.svg
+    .logo: include ../vector/star.svg
     .topbar
 
     .inner
@@ -86,23 +86,23 @@ block content
       .bottom
         .visit
           .label visit /
-          a.icon(target='_new',href=data.meta.address)
-            include ../pub/svg/pin.svg
-          a.address(target='_new',href=data.meta.address)
+          a.icon(target='_new',href=config.meta.address)
+            include ../vector/pin.svg
+          a.address(target='_new',href=config.meta.address)
             .copy 1740 telegraph ave.
             .copy oakland, ca 94612
         .social
           .label social /
-          a.icon(target='_new',href=data.meta.social.facebook)
-            include ../pub/svg/social/facebook.svg
-          a.icon(target='_new',href=data.meta.social.instagram)
-            include ../pub/svg/social/instagram.svg
-          a.icon(target='_new',href=data.meta.social.linkedin)
-            include ../pub/svg/social/linkedin.svg
+          a.icon(target='_new',href=config.meta.social.facebook)
+            include ../vector/social/facebook.svg
+          a.icon(target='_new',href=config.meta.social.instagram)
+            include ../vector/social/instagram.svg
+          a.icon(target='_new',href=config.meta.social.linkedin)
+            include ../vector/social/linkedin.svg
           .clear
 
   .section.services.off
-    .logo: include ../pub/svg/star.svg
+    .logo: include ../vector/star.svg
     .topbar
     .inner
       .top
@@ -129,13 +129,13 @@ block content
 
         .servicelist
           .label execution /
-          .item Rapid Proototyping
+          .item Rapid Prototyping
           .item Working Proofs of Concept
           .item Pilot Teams
           .item Consulting
 
   .section.work.off
-    .logo: include ../pub/svg/star.svg
+    .logo: include ../vector/star.svg
     .topbar
     .inner
       .top 
@@ -144,9 +144,9 @@ block content
         .subcopy Our team has a history working with companies and startups of all shapes and sizes.
       .bottom
         .companys
-          each company in data.company
+          each company in config.company
             .company
-              img(src='/img/company/' + company + '.png')
+              images(src='/images/company/' + company + '.png')
           .clear
  
   .swiper.right.off
@@ -167,6 +167,6 @@ block content
   .debug 
 
   script(type='text/javascript').
-    Loader.load('/jst/detect.js', 'Detect', function() {
-      Loader.load('/jst/index.js', 'Index');
+    Loader.load('/js/detect.js', 'Detect', function() {
+      Loader.load('/js/index.js', 'Index');
     });

@@ -9,16 +9,16 @@ Index =
   tl: false
 
   colors:
-    'definery': data.color.teal1
-    'iterate': data.color.blue1
-    'navigate': data.color.green1
-    'product': data.color.pink1
+    'definery': config.color.teal1
+    'iterate': config.color.blue1
+    'navigate': config.color.green1
+    'product': config.color.pink1
 
   menucolors:
-    'about': data.color.teal1
-    'work': data.color.bblue
-    'services': data.color.bpink
-    'contact': data.color.bgreen
+    'about': config.color.teal1
+    'work': config.color.bblue
+    'services': config.color.bpink
+    'contact': config.color.bgreen
 
   current: 0
 

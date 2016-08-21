@@ -1,7 +1,7 @@
 
 Loader =
 
-  scripts: {jst: [], jst_lib: [], jst_cune: [], jst_cune_lib: []}
+  scripts: {js: [], js_lib: [], jst_cune: [], jst_cune_lib: []}
 
   i: (callback) ->
 
