@@ -378,14 +378,14 @@
       transition fill 1s ease-in 0s
       fill gc(black1)
       &:nth-child(3)
-        animation fadeIn 0.5s ease-in-out both
-        animation-delay 0.5s
+        animation starTop 2.0s ease-in-out both
+        animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
       &:nth-child(2)
-        animation fadeIn 0.5s ease-in-out both
-        animation-delay 0.7s
+        animation starLeft 2.0s ease-in-out both
+        animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
       &:nth-child(1)
-        animation fadeIn 0.5s ease-in-out both
-        animation-delay 0.9s
+        animation starBottom 2.0s ease-in-out both
+        animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
 
 .content
   position absolute

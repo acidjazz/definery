@@ -1,3 +1,4 @@
+
 @keyframes rightToLeft
   0%
     left 100vw
@@ -20,13 +21,43 @@
     left 100vw
     right 0vw
 
+
+@keyframes starTop
+  from
+    transform translate(100px, 100px)
+    opacity 0
+  to
+    opacity 1
+    transform translate(0, 0)
+
+
+@keyframes starLeft
+  from
+    transform translate(100px, -100px)
+    opacity 0
+  to
+    opacity 1
+    transform translate(0, 0)
+
+
+@keyframes starBottom
+  from
+    transform translate(-100px, -100px)
+    opacity 0
+  to
+    opacity 1
+    transform translate(0, 0)
+
+
+
+
+
+
 @keyframes cInFromBottom
   from
     transform translate(0, 350px)
   to
     transform translate(0, 0)
-
-
 
 @keyframes cOutToBottom
   from
@@ -41,6 +72,16 @@
     opacity 0
   to
     opacity 1
+
+@keyframes rotateIn
+  from
+    opacity 0
+    transform rotate(180deg)
+  to
+    opacity 1
+    transform rotate(0deg)
+
+
 
 @keyframes fadeOut
   from
@@ -163,8 +204,6 @@
   to
     opacity 0
     transform translate(0, -350px)
-
-
 
 /*
 @media all and (min-width: 1001px)
