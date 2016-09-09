@@ -372,20 +372,21 @@
   > svg
     width inherit
     height inherit
+    animation zoomIn 0.5s ease-in-out 0.3s both
     > polygon.hidden
       visibility hidden
     > polygon
       transition fill 1s ease-in 0s
       fill gc(black1)
       &:nth-child(3)
-        animation starTop 1.0s ease-in-out 0.3s both
-        animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+        animation starTop 0.5s ease-in-out 0.3s both
+        //transform rotate(30deg) translate(100px, -30px)
       &:nth-child(2)
-        animation starLeft 1.0s ease-in-out 0.3s both
-        animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+        animation starLeft 0.5s ease-in-out 0.3s both
+        //transform rotate(-4deg)
       &:nth-child(1)
-        animation starBottom 1.0s ease-in-out 0.3s both
-        animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+        animation starBottom 0.5s ease-in-out 0.3s both
+        //transform rotate(-30deg) translate(-200px, 50px)
 
 .content
   position absolute

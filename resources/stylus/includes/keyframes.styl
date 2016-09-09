@@ -24,29 +24,29 @@
 
 @keyframes starTop
   from
-    transform translate(50px, 50px)
     opacity 0
+    transform rotate(30deg) translate(100px, -30px)
   to
     opacity 1
-    transform translate(0, 0)
+    transform rotate(0deg) translate(0, 0)
 
 
 @keyframes starLeft
   from
-    transform translate(50px, -50px)
     opacity 0
+    transform rotate(-4deg)
   to
     opacity 1
-    transform translate(0, 0)
+    transform rotate(0deg)
 
 
 @keyframes starBottom
   from
-    transform translate(-50px, -50px)
     opacity 0
+    transform rotate(-30deg) translate(-200px, 50px)
   to
     opacity 1
-    transform translate(0, 0)
+    transform rotate(0deg) translate(0px, 0px)
 
 
 @keyframes cInFromBottom
@@ -68,6 +68,14 @@
     opacity 0
   to
     opacity 1
+
+@keyframes zoomIn
+  from
+    transform scale(0.5)
+  to
+    transform scale(1)
+
+
 
 @keyframes rotateIn
   from
