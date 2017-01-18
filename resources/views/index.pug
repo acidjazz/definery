@@ -86,9 +86,9 @@ block content
       .bottom
         .visit
           .label visit /
-          a.icon(target='_new',href=config.meta.address)
+          a.icon(target='_new',href=config.meta.address.url)
             include ../vector/pin.svg
-          a.address(target='_new',href=config.meta.address)
+          a.address(target='_new',href=config.meta.address.url)
             .copy=config.meta.address.street 
             .copy #{config.meta.address.city}, #{config.meta.address.region} #{config.meta.address.postal}
         .social
