@@ -49,11 +49,11 @@ html(lang='en')
         "telephone": "14159933305",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "1611 Telegraph Ave. 4th Fl.",
-          "addressLocality": "Oakland",
-          "addressRegion": "CA",
-          "postalCode": "94612",
-          "addressCountry": "US"
+          "streetAddress": #{config.meta.address.street},
+          "addressLocality": #{config.meta.address.city},
+          "addressRegion": #{config.meta.address.region},
+          "postalCode": #{config.meta.address.postal},
+          "addressCountry": #{config.meta.address.country}
         },
         "sameAs": [
           "https://www.facebook.com/definery.io/",

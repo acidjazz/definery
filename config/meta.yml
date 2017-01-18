@@ -6,7 +6,13 @@ keywords: Digital product design, User Experience Design, UX Design, iXd, Servic
 trackingID: UA-77714389-1
 share: img/share.jpg
 repo: http://www.github.com/acidjazz/definery
-address: https://goo.gl/maps/ARK41fBafUN2
+address:
+  url: https://goo.gl/maps/ARK41fBafUN2
+  street: 1611 Telegraph Ave. 4th Fl.
+  city: Oakland
+  region: CA
+  postal: 94612
+  country: US
 social:
   facebook: https://www.facebook.com/definery.io
   twitter: https://twitter.com/definery_io
