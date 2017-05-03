@@ -1,0 +1,25 @@
+script(type='application/ld+json').
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "url": "#{config.meta.url}",
+    "logo": "#{config.meta.url}#{config.meta.share}",
+    "telephone": "14159933305",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": #{config.meta.address.street},
+      "addressLocality": #{config.meta.address.city},
+      "addressRegion": #{config.meta.address.region},
+      "postalCode": #{config.meta.address.postal},
+      "addressCountry": #{config.meta.address.country}
+    },
+    "sameAs": [
+      "https://www.facebook.com/definery.io/",
+      "#{config.meta.social.linkedin}",
+      "https://www.twitter.com/definery_io/",
+      "https://www.instagram.com/definery.io/"
+    ]
+
+      }
+
+

@@ -1,4 +1,4 @@
-extends extends/layout
+extends layout/core
 
 block content
   .colors
@@ -135,20 +135,13 @@ block content
           .item Consulting
 
   .section.work.off
-    .logo: include ../vector/star.svg
-    .topbar
     .inner
-      .top 
-        .label work /
-        .copy We may be a brand new agency but we are no strangers to the industry.
-        .subcopy Our team has a history working with companies and startups of all shapes and sizes.
-      .bottom
-        .companys
-          each company in config.company
-            .company
-              img(src='/images/company/' + company + '.png')
-          .clear
- 
+      .gigs
+
+      .dots
+
+    .logo: include ../vector/star.svg
+
   .swiper.right.off
   .swiper.left.off
 

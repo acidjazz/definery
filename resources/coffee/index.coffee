@@ -30,6 +30,8 @@ Index =
 
     Index.handlers()
 
+    Work.populate()
+
     if navigator.userAgent.toLowerCase().indexOf('android') > -1
       Index.transitTimeout = 800
 
@@ -37,7 +39,7 @@ Index =
   handlers: ->
 
     $('.nav').on 'click', Index.navHandler
-    $('.dots > .dot').on 'click', Index.dotHandler
+    $('.container > .inner > .dots > .dot').on 'click', Index.dotHandler
     $('.menu > .option').on 'click', Index.menuHandler
     $('.section > .logo').on 'click', ->
       $('.menu > .option.option_about').trigger 'click'
@@ -76,6 +78,7 @@ Index =
     Index.menuSwiping = true
 
     current = $(this).data 'option'
+    previous = $('.menu > .option.on').data 'option'
     num = $(this).data 'num'
 
     if $(".option_#{current}").hasClass 'on'
@@ -89,6 +92,13 @@ Index =
       Index.meta Index.colors[Index.currentSlide], 200
     else
       Index.meta Index.menucolors[current], 200
+
+    if current is 'work'
+      Work.i()
+
+    if previous is 'work'
+      Work.d()
+
 
     for option in Index.menuOptions
       $('.swiper').removeClass("swiper_#{option}")
@@ -131,8 +141,8 @@ Index =
 
     return true if Index.paused
 
-    previous = $('.dots .dot.on').data 'sect'
-    pnum = $('.dots .dot.on').data 'num'
+    previous = $('.container > .inner > .dots .dot.on').data 'sect'
+    pnum = $('.container > .inner > .dots .dot.on').data 'num'
     current = $(this).data 'sect'
     cnum = $(this).data 'num'
 
@@ -147,6 +157,8 @@ Index =
     , Index.timeout
 
   navigate: (direction) ->
+
+    return Work.navigate direction if Work.active is true
 
     return true if $('.menu > .option.option_contact').hasClass('on')
     return true if $('.menu > .option.option_services').hasClass('on')
@@ -253,8 +265,8 @@ Index =
 
       , Index.transitTimeout
 
-    _.off '.dots > .dot'
-    _.on ".dots > .dot.dot_#{current}"
+    _.off '.container > .inner > .dots > .dot'
+    _.on ".container > .inner > .dots > .dot.dot_#{current}"
 
     tl = new TimelineMax({repeat: 0})
     tl
