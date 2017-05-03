@@ -139,7 +139,8 @@
 
 .section.work
   > .logo > svg > polygon
-    fill gc(blue3)
+    fill gc(white1)
+    //fill gc(blue3)
   > .inner
     width 100%
     height 100%
@@ -150,11 +151,21 @@
     > .gigs
         width 100%
         height 100%
+        animation fInFromBottom 0.5s ease-in-out both 0.2s
         > .gig
           &.on
-            animation fInFromBottom 0.5s ease-in-out both 0.3s
+            animation fadeIn 0.5s ease-in-out both 0s
+            &.up
+              animation fInFromBottom 0.5s ease-in-out both 0s
+            &.down
+              animation fInFromTop 0.5s ease-in-out both 0s
           &.off
-            animation fOutToTop 0.5s ease-in-out both 0.3s
+            animation fadeOut 0.5s ease-in-out both 0s
+            &.up
+              animation fOutToTop 0.5s ease-in-out both 0s
+            &.down
+              animation fOutToBottom 0.5s ease-in-out both 0s
+
           position absolute
           fullsize()
           width inherit

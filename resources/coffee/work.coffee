@@ -28,6 +28,7 @@ Work =
       )
       dot.append $('<div />', class: 'inner')
 
+
       if index is 0
         _.on gig
         _.on dot
@@ -39,6 +40,7 @@ Work =
     console.log 'Work.i()'
     @active = true
     @handlers.i()
+    _.off '.content'
 
   d: ->
     console.log 'Work.d()'
@@ -53,32 +55,40 @@ Work =
       $('.section.work > .inner > .dots > .dot').off 'click', @dot
 
     dot: ->
-      previous = $('.section.work > .inner > .dots > .dot.on')
-      current = $(this)
-      num = current.data 'num'
-      _.off '.section.work > .inner > .dots > .dot'
-      _.off '.section.work > .inner > .gigs > .gig'
+      previous = $('.section.work > .inner > .dots > .dot.on').data 'num'
+      current = $(this).data 'num'
 
-      _.on ".section.work > .inner > .dots > .dot_#{num}"
-      _.on ".section.work > .inner > .gigs > .gig_#{num}"
+      Work.slide previous, current
 
   navigate: (direction) ->
     previous = $('.section.work > .inner > .dots > .dot.on').data 'num'
 
     if direction is 'up'
-      next = previous+1
+      current = previous+1
     else
-      next = previous-1
+      current = previous-1
 
-    next = Work.gigs.length-1 if next < 0
-    next = 0 if next is Work.gigs.length-1
+    current = Work.gigs.length-1if current < 0
 
-    console.log next
+    current = 0 if current is Work.gigs.length
 
-    _.off '.section.work > .inner > .dots > .dot'
-    _.off '.section.work > .inner > .gigs > .gig'
+    @slide previous, current
 
-    _.on ".section.work > .inner > .dots > .dot_#{next}"
-    _.on ".section.work > .inner > .gigs > .gig_#{next}"
+  slide: (from, to) ->
+
+    if to > from
+      $(".section.work > .inner > .gigs > .gig.gig_#{from}").addClass('up').removeClass('down')
+      $(".section.work > .inner > .gigs > .gig.gig_#{to}").addClass('up').removeClass('down')
+    else
+      $(".section.work > .inner > .gigs > .gig.gig_#{from}").addClass('down').removeClass('up')
+      $(".section.work > .inner > .gigs > .gig.gig_#{to}").addClass('down').removeClass('up')
+
+    _.off ".section.work > .inner > .dots > .dot.dot_#{from}"
+    _.off ".section.work > .inner > .gigs > .gig.gig_#{from}"
+
+    _.on ".section.work > .inner > .dots > .dot_#{to}"
+    _.on ".section.work > .inner > .gigs > .gig_#{to}"
+
+
 
 
