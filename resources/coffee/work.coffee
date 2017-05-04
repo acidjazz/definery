@@ -1,5 +1,7 @@
 Work = 
 
+  populated: false
+
   paused: false
   timeout: 1000
 
@@ -15,17 +17,31 @@ Work =
     'lw_site.jpg',
   ]
 
-  populate:  (complete)->
+  populate:  (complete) ->
 
-    for image, index in @gigs
+    Basal.jsonp 'structures', client: '590a61f45aa59b01b02e2ec2', null, 'Work.callback'
+
+  callback: (data) ->
+
+    for structure in data.data
+      if structure.name is 'work'
+        entries = structure.entries
+
+    for entry, index in entries
+
+      image = entry.entities.image.value
+      thumbnail = entry.entities.thumbnail.value
+      name = entry.name
+      description = entry.entities.description.value
+
 
       gig = $ '<div />', 
         class: "gig off down gig_#{index}"
-        style: "background-image: url(/images/work/thumbs/#{image})"
+        style: "background-image: url(#{thumbnail})"
 
       gig.append  $ '<div />',
         class: 'image off'
-        style: "background-image: url(/images/work/#{image})"
+        style: "background-image: url(#{image})"
 
       dot = $ '<div></div>', 
         class: "dot off dot_#{index}"
@@ -38,11 +54,11 @@ Work =
 
       copy.append $ '<div />',
         class: 'ctitle'
-        html: 'this is the title'
+        html: name
 
       copy.append $ '<div />',
         class: 'cdescription'
-        html: 'this is the description'
+        html: description
 
       if index is 0
         _.on gig
