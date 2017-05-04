@@ -180,23 +180,19 @@
         //animation fadeIn 0.6s ease-in-out both 0s
         > .gig
           &.on
-            opacity 0 
             animation fadeIn 0s ease-in-out both 0s
+            opacity 1
             &.up
               animation fInFromBottom 0.5s ease-in-out both 0s
-              opacity 1
             &.down
               animation fInFromTop 0.5s ease-in-out both 0s
-              opacity 1
           &.off
-            opacity 0 
             animation fadeOut 0s ease-in-out both 0s
+            opacity 0
             &.up
               animation fOutToTop 0.5s ease-in-out both 0s
-              opacity 1
             &.down
               animation fOutToBottom 0.5s ease-in-out both 0s
-              opacity 1
 
           position absolute
           fullsize()
