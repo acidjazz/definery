@@ -82,6 +82,7 @@ Work =
 
   d: ->
     @active = false
+    @handlers.d()
 
   handlers: 
 
