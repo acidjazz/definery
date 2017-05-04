@@ -45,6 +45,7 @@ Work =
         _.on gig
         _.on dot
         _.on copy
+        gig.removeClass('down').addClass 'up'
 
       $('.section.work > .inner > .gigs').append gig
       $('.section.work > .inner > .dots').append dot
@@ -63,6 +64,8 @@ Work =
 
   d: ->
     console.log 'Work.d()'
+    $('.section.work > .inner > .gigs > .gig').removeClass('up').removeClass('down')
+    $('.section.work > .inner > .gigs > .gig.on').addClass('up')
     @active = false
 
   handlers: 
