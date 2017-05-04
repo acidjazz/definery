@@ -1,0 +1,52 @@
+.section.contact
+  > .logo > svg > polygon
+    fill gc(teal1)
+  > .inner
+    > .top
+      border-bottom 1px solid gc(teal1)
+      a
+        color gc(teal1)
+        text-decoration none
+        transition color 0.1s linear 0s
+        &:hover
+          color gc(white1)
+      > .label
+        color gc(teal1)
+    > .bottom
+      > .visit
+        animation cellInY 0.2s linear 0.3s both
+      > .social
+        animation cellInY 0.2s linear 0.4s both
+      > .visit, > .social
+        float left
+        width 50%
+        > .label
+          padding 40px 0 20px 0
+          color gc(teal1)
+          gf(copy1s)
+        > .icon
+          float left
+          width 25px
+          height 25px
+          padding 20px
+          border 2px solid gc(teal1)
+          border-radius 50%
+          margin 0 20px 0 0
+          transition background-color 0.2s linear 0s
+          &:hover
+            background-color gc(teal1)
+            > svg > path, > svg > circle
+              fill gc(white1)
+              transition fill 0.2s linear 0.1s
+          > svg
+            width inherit
+            height inherit
+            > path, > circle
+              fill gc(teal1)
+        > .address
+          float left
+          margin 10px 0 0 0
+          color gc(white1)
+          text-decoration none
+
+

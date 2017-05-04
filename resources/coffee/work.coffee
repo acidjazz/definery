@@ -17,7 +17,7 @@ Work =
     for image, index in @gigs
 
       gig = $ '<div />', 
-        class: "gig off gig_#{index}"
+        class: "gig off down gig_#{index}"
         style: "background-image: url(/images/work/thumbs/#{image})"
 
       gig.append  $ '<div />',
@@ -63,7 +63,6 @@ Work =
     @handlers.i()
 
   d: ->
-    console.log 'Work.d()'
     @active = false
 
   handlers: 
@@ -77,7 +76,10 @@ Work =
       previous = $('.section.work > .inner > .dots > .dot.on').data 'num'
       current = $(this).data 'num'
 
-      Work.slide previous, current
+      if previous < current
+        Work.slide previous, current, 'down'
+      else
+        Work.slide previous, current, 'up'
 
   navigate: (direction) ->
     previous = $('.section.work > .inner > .dots > .dot.on').data 'num'
@@ -91,25 +93,22 @@ Work =
 
     current = 0 if current is Work.gigs.length
 
-    @slide previous, current
+    @slide previous, current, direction
 
-  slide: (from, to) ->
+  slide: (from, to, direction) ->
 
-    if to > from
+    if direction is 'up'
       $(".section.work > .inner > .gigs > .gig.gig_#{from}").addClass('up').removeClass('down')
       $(".section.work > .inner > .gigs > .gig.gig_#{to}").addClass('up').removeClass('down')
-    else
+    else 
       $(".section.work > .inner > .gigs > .gig.gig_#{from}").addClass('down').removeClass('up')
       $(".section.work > .inner > .gigs > .gig.gig_#{to}").addClass('down').removeClass('up')
 
     _.off ".section.work > .inner > .dots > .dot.dot_#{from}"
-    _.off ".section.work > .inner > .gigs > .gig.gig_#{from}"
+    _.off ".section.work > .inner > .gigs > .gig.gig_#{from}", offing: true, offtime: 0.5
     _.off ".section.work > .inner > .copys > .copy.copy_#{from}"
 
     _.on ".section.work > .inner > .dots > .dot_#{to}"
     _.on ".section.work > .inner > .gigs > .gig_#{to}"
     _.on ".section.work > .inner > .copys > .copy.copy_#{to}"
-
-
-
 
