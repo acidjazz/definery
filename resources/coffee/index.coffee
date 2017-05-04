@@ -158,8 +158,6 @@ Index =
 
   navigate: (direction) ->
 
-    console.log 'Index.navigate fired'
-
     return Work.navigate direction if Work.active is true
 
     return true if $('.menu > .option.option_contact').hasClass('on')
