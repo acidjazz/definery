@@ -51,7 +51,7 @@ Index =
     #  event.preventDefault()
 
     Detect.handler Index.navigate
-    $('.content > .inner > .tapspace').swipe
+    $('.content > .inner > .tapspace, .section.work > .inner > .tapspace').swipe
       swipe: (event, direction, distance, duration, fingerCount) ->
         ###
         direction  = 'down' if direction is 'up'
@@ -157,6 +157,8 @@ Index =
     , Index.timeout
 
   navigate: (direction) ->
+
+    console.log 'Index.navigate fired'
 
     return Work.navigate direction if Work.active is true
 

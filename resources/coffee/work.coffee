@@ -1,4 +1,3 @@
-
 Work = 
 
   active: false
@@ -17,35 +16,54 @@ Work =
 
     for image, index in @gigs
 
-      gig = $('<div />', 
+      gig = $ '<div />', 
         class: "gig off gig_#{index}"
-        style: "background-image: url(/images/work/#{image})"
-      )
+        style: "background-image: url(/images/work/thumbs/#{image})"
 
-      dot = $('<div></div>', 
+      gig.append  $ '<div />',
+        class: 'image off'
+        style: "background-image: url(/images/work/#{image})"
+
+      dot = $ '<div></div>', 
         class: "dot off dot_#{index}"
         'data-num': index
-      )
-      dot.append $('<div />', class: 'inner')
 
+      dot.append $ '<div />', class: 'inner'
+
+      copy = $ '<div />', 
+        class: "copy off copy_#{index}"
+
+      copy.append $ '<div />',
+        class: 'ctitle'
+        html: 'this is the title'
+
+      copy.append $ '<div />',
+        class: 'cdescription'
+        html: 'this is the description'
 
       if index is 0
         _.on gig
         _.on dot
+        _.on copy
 
       $('.section.work > .inner > .gigs').append gig
       $('.section.work > .inner > .dots').append dot
+      $('.section.work > .inner > .copys').append copy
+
+    $('.section.work > .inner > .gigs > .gig > .image.off').each (i, el) ->
+      src = $(el).css('background-image').replace(/url\("?(.*?)"?\)/, "$1")
+      image = new Image()
+      image.src = src
+      image.onload = ->
+        _.on el
 
   i: ->
-    console.log 'Work.i()'
     @active = true
     @handlers.i()
-    _.off '.content'
 
   d: ->
     console.log 'Work.d()'
     @active = false
-
 
   handlers: 
 
@@ -85,9 +103,11 @@ Work =
 
     _.off ".section.work > .inner > .dots > .dot.dot_#{from}"
     _.off ".section.work > .inner > .gigs > .gig.gig_#{from}"
+    _.off ".section.work > .inner > .copys > .copy.copy_#{from}"
 
     _.on ".section.work > .inner > .dots > .dot_#{to}"
     _.on ".section.work > .inner > .gigs > .gig_#{to}"
+    _.on ".section.work > .inner > .copys > .copy.copy_#{to}"
 
 
 
