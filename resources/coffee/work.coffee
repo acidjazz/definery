@@ -1,5 +1,8 @@
 Work = 
 
+  paused: false
+  timeout: 1000
+
   active: false
 
   gigs: [
@@ -54,7 +57,6 @@ Work =
       src = $(el).css('background-image').replace(/url\("?(.*?)"?\)/, "$1")
       image = new Image()
       image.src = src
-      console.log src
       image.onload = ->
         _.on el
 
@@ -82,6 +84,9 @@ Work =
         Work.slide previous, current, 'up'
 
   navigate: (direction) ->
+
+    return true if Work.paused is true
+
     previous = $('.section.work > .inner > .dots > .dot.on').data 'num'
 
     if direction is 'up'
@@ -94,6 +99,11 @@ Work =
     current = 0 if current is Work.gigs.length
 
     @slide previous, current, direction
+
+    Work.paused = true
+    setTimeout ->
+      Work.paused = false
+    ,Work.timeout
 
   slide: (from, to, direction) ->
 
