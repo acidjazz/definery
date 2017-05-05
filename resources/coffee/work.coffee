@@ -87,9 +87,9 @@ Work =
   handlers: 
 
     i: ->
-      $('.section.work > .inner > .dots > .dot').on 'click', @dot
+      $('.section.work > .inner').on 'click', '.dots > .dot', @dot
     d: ->
-      $('.section.work > .inner > .dots > .dot').off 'click', @dot
+      $('.section.work > .inner').off 'click', '.dots > .dot', @dot
 
     dot: ->
       previous = $('.section.work > .inner > .dots > .dot.on').data 'num'
