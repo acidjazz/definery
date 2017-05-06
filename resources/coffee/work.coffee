@@ -30,7 +30,7 @@ Work =
     for entry, index in entries
 
       image = entry.entities.image.value
-      thumbnail = entry.entities.thumbnail.value
+      thumbnail = entry.entities.image.thumbnails[20]
       name = entry.name
       description = entry.entities.description.value
 
