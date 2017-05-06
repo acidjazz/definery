@@ -39,6 +39,10 @@
     > .gigs
         width 100%
         height 100%
+        &.gigs_desktop
+          display block
+        &.gigs_mobile
+          display none
         > .gig
           &.on
             opacity 1
@@ -78,3 +82,9 @@
       > .copys
         bottom 80px
         left 30px
+
+@media all and (min-width: 1px) and (max-width: 1000px) and (orientation: portrait)
+  .section.work > .inner > .gigs.gigs_desktop
+    display none
+  .section.work > .inner > .gigs.gigs_mobile
+    display block

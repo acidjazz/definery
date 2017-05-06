@@ -31,17 +31,28 @@ Work =
 
       image = entry.entities.image.value
       thumbnail = entry.entities.image.thumbnails[20]
+
+      image_mobile = entry.entities.image_mobile.value
+      thumbnail_mobile = entry.entities.image_mobile.thumbnails[20]
+
       name = entry.name
       description = entry.entities.description.value
 
-
-      gig = $ '<div />', 
+      gig_desktop = $ '<div />', 
         class: "gig off down gig_#{index}"
         style: "background-image: url(#{thumbnail})"
 
-      gig.append  $ '<div />',
+      gig_desktop.append  $ '<div />',
         class: 'image off'
         style: "background-image: url(#{image})"
+
+      gig_mobile = $ '<div />', 
+        class: "gig off down gig_#{index}"
+        style: "background-image: url(#{thumbnail_mobile})"
+
+      gig_mobile.append  $ '<div />',
+        class: 'image off'
+        style: "background-image: url(#{image_mobile})"
 
       dot = $ '<div></div>', 
         class: "dot off dot_#{index}"
@@ -61,11 +72,13 @@ Work =
         html: description
 
       if index is 0
-        _.on gig
+        _.on gig_desktop
+        _.on gig_mobile
         _.on dot
         _.on copy
 
-      $('.section.work > .inner > .gigs').append gig
+      $('.section.work > .inner > .gigs.gigs_desktop').append gig_desktop
+      $('.section.work > .inner > .gigs.gigs_mobile').append gig_mobile
       $('.section.work > .inner > .dots').append dot
       $('.section.work > .inner > .copys').append copy
 
