@@ -19,16 +19,17 @@ Work =
 
   populate:  (complete) ->
 
-    Basal.jsonp 'structures', client: '590a61f45aa59b01b02e2ec2', null, 'Work.callback'
+    Basal.jsonp 'entries', 
+      structure: '590ba6be5aa59b01b02e2ec4'
+      sort: 'order',
+      asc: 'true',
+      active: 'true',
+    , null, 'Work.callback'
 
   callback: (data) ->
 
-    for structure in data.data
-      if structure.name is 'work'
-        entries = structure.entries
-
-    for entry, index in entries
-
+    for entry, index in data.data
+      
       image = entry.entities.image.value
       thumbnail = entry.entities.image.thumbnails[20]
 
