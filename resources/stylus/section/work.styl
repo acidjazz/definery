@@ -25,6 +25,8 @@
       margin-left -35vw
       z-index 200
 
+    > .template
+      display none
     > .copys
       z-index 200
       position absolute
@@ -32,12 +34,43 @@
       left 30px
       > .copy
         color gc(white1)
+        text-decoration none
         onoff()
+        &.linked:hover
+          > .copylink
+            > .vector.outlined
+              opacity 0
+            > .vector.filled
+              opacity 1
+
         > .ctitle
           animation inFromLeft 0.5s ease-in-out both 0.2s
+          float left
           gf(h1)
           margin-bottom 8px
+        > .copylink
+          animation inFromLeft 0.5s ease-in-out both 0.21s
+          float left
+          width 28px
+          height 28px
+          border-radius 50%
+          margin 5px 0 0 10px
+          position relative
+          > .vector
+            position absolute
+            fullsize()
+            transition opacity 0.2s ease-in-out
+            &.outlined
+              opacity 1
+            &.filled
+              opacity 0
+            > svg
+              width inherit
+              height inherit
+              > path
+                fill gc(white1)
         > .cdescription
+          clear both
           animation inFromLeft 0.5s ease-in-out both 0.2s
           gf(copy1)
     > .gigs

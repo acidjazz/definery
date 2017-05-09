@@ -53,12 +53,18 @@ Work =
 
       dot.append $ '<div />', class: 'inner'
 
-      copy = $ '<div />', 
+      copy = $ '<a />', 
         class: "copy off copy_#{index}"
 
       copy.append $ '<div />',
         class: 'ctitle'
         html: name
+
+      if entry.entities.link.value
+        copy.append $('.copylink_template').children().clone()
+        copy.addClass 'linked'
+        copy.attr 'href', entry.entities.link.value
+        copy.attr 'target', '_new'
 
       copy.append $ '<div />',
         class: 'cdescription'
