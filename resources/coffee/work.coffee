@@ -7,16 +7,6 @@ Work =
 
   active: false
 
-  gigs: [
-    'likwid.jpg',
-    'lively_card.jpg',
-    'lw_labs.jpg',
-    'perricone_blog.jpg',
-    'lively_branding.jpg',
-    'lively_product.jpg',
-    'lw_site.jpg',
-  ]
-
   populate:  (complete) ->
 
     Basal.jsonp 'entries', 
@@ -28,8 +18,10 @@ Work =
 
   callback: (data) ->
 
-    for entry, index in data.data
-      
+    Work.entries = data.data
+
+    for entry, index in Work.entries     
+
       image = entry.entities.image.value
       thumbnail = entry.entities.image.thumbnails[20]
 
@@ -40,7 +32,7 @@ Work =
       description = entry.entities.description.value
 
       gig_desktop = $ '<div />', 
-        class: "gig off down gig_#{index}"
+        class: "gig off gig_#{index}"
         style: "background-image: url(#{thumbnail})"
 
       gig_desktop.append  $ '<div />',
@@ -48,7 +40,7 @@ Work =
         style: "background-image: url(#{image})"
 
       gig_mobile = $ '<div />', 
-        class: "gig off down gig_#{index}"
+        class: "gig off gig_#{index}"
         style: "background-image: url(#{thumbnail_mobile})"
 
       gig_mobile.append  $ '<div />',
@@ -125,9 +117,9 @@ Work =
     else
       current = previous-1
 
-    current = Work.gigs.length-1if current < 0
+    current = Work.entries.length-1 if current < 0
 
-    current = 0 if current is Work.gigs.length
+    current = 0 if current is Work.entries.length
 
     @slide previous, current, direction
 
