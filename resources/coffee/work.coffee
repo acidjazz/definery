@@ -102,9 +102,9 @@ Work =
       current = $(this).data 'num'
 
       if previous < current
-        Work.slide previous, current, 'down'
-      else
         Work.slide previous, current, 'up'
+      else
+        Work.slide previous, current, 'down'
 
   navigate: (direction) ->
 
